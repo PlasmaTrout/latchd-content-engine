@@ -1,0 +1,137 @@
+/*
+We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+However, this blank file is available if you prefer
+*/
+
+.indent {
+	text-indent: 20px;
+}
+
+.noindent {
+	text-indent: 0px;
+}
+
+.tool-label{
+	 font-size: 10pt;
+}
+
+.georgia {
+	font-family: Georgia;
+	font-size: 14pt;
+}
+
+.libre-baskerville {
+	font-family: "Libre Baskerville",serif;
+	font-size: 14pt;
+}
+
+.header-roboto {
+	font-family: 'Roboto', sans-serif;
+}
+
+.header-source-sans {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.justified {
+	text-align: justify;
+}
+
+.header-open-type {
+	font-family: "Open Sans";
+}
+
+.header-helvetica {
+	font-family: "Helvetica"
+}
+
+h2[id=headline]{
+	font-size: 34pt;
+	font-weight: bold;
+}
+h5[id=subheading]{
+	font-size: 20pt;
+}
+
+.header-ms-sans {
+	font-family: "MS Sans Serif";
+}
+
+.garamond {
+	font-family: Garamond;
+	font-size: 14pt;
+}
+
+.ms-serif {
+	font-family: "MS Serif";
+	font-size: 14pt;
+}
+
+.ms-sans {
+	font-family: "MS Sans Serif";
+	font-size: 14pt;
+}
+
+.bitstream-serif {
+	font-family: "Bitstream Vera Serif";
+	font-size: 12pt;
+}
+
+.bitstream-sans {
+	font-family: "Bitstream Vera Sans";
+	font-size: 12pt;
+}
+
+
+.dropcap {
+	float: left;
+	font-size: 90px;
+	line-height: 60px;
+	padding-top: 5px;
+	padding-right: 8px;
+}
+
+.paraselect {
+	-moz-box-shadow:    0px 0px 5px gray;
+	-webkit-box-shadow: 0px 0px 5px gray;
+	box-shadow:         0px 0px 15px gray;
+	corner-radius: 5px;
+}
+
+.iconify {
+	font-family: 'EntypoRegular'
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+   @font-face {
+      font-family: 'entypo';
+      src: url('/static/fonts/icons/entypo.svg') format('svg');
+   }
+}
+
+blockquote.style4 {
+  /*background: #f9f9f9;*/
+  /*border-left: 10px solid #ccc;*/
+  border-left: 0px;
+  margin: 1.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+} 
+blockquote.style4:before {
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote.style4 p {
+  display: inline;
+  font-size: 14pt;
+}
+
+div.blockauthor {
+	text-align: right;
+	margin-right: 20px;
+	margin-top: 10px;
+	font-size: smaller;
+	font-weight: bolder;
+}

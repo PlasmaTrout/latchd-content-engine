@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+	<primaryNodeType>nt:unstructured</primaryNodeType>
+	<property>
+        <name>sling:resourceType</name>
+        <type>String</type>
+        <value>latchd/templates/footer</value>
+    </property>
+</node>

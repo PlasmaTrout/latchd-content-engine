@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+	<primaryNodeType>nt:unstructured</primaryNodeType>
+	<property>
+        <name>sling:resourceType</name>
+        <type>String</type>
+        <value>latchd/templates/blog</value>
+    </property>
+    <property>
+        <name>author</name>
+        <type>String</type>
+        <value>J.Downing</value>
+    </property>
+    <property>
+        <name>dropcap</name>
+        <type>Boolean</type>
+        <value>true</value>
+    </property>
+    <property>
+        <name>justify</name>
+        <type>Boolean</type>
+        <value>true</value>
+    </property>
+    <property>
+        <name>headline</name>
+        <type>String</type>
+        <value>Finally, A Document Engine</value>
+    </property>
+    <property>
+        <name>subheading</name>
+        <type>String</type>
+        <value>with some real typography</value>
+    </property>
+    <property>
+        <name>typeset</name>
+        <type>String</type>
+        <value>1</value>
+    </property>
+    
+    <node>
+    	<name>paragraph1</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+	        <name>sling:resourceType</name>
+	        <type>String</type>
+	        <value>latchd/templates/paragraph</value>
+    	</property>
+    	<property>
+	        <name>value</name>
+	        <type>String</type>
+	        <value>The vision of LatchD has gone through several iterations over the last few years, but one thing remains a constant: Web typography is horrible. It's getting better, don't get me wrong, but it's still horrible. The LatchD engine attempts to deliver a minimal writing and editing experience by improving on the typography and workflow used to create documentation, blogs, technical books and novels in a web based format.</value>
+    	</property>
+    </node>
+    <node>
+    	<name>quote1</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+	        <name>sling:resourceType</name>
+	        <type>String</type>
+	        <value>latchd/templates/quote</value>
+    	</property>
+    	<property>
+	        <name>value</name>
+	        <type>String</type>
+	        <value>To be or not to be</value>
+    	</property>
+    	<property>
+	        <name>source</name>
+	        <type>String</type>
+	        <value>Unknown</value>
+    	</property>
+    </node>
+    <node>
+    	<name>paragraph2</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+	        <name>sling:resourceType</name>
+	        <type>String</type>
+	        <value>latchd/templates/paragraph</value>
+    	</property>
+    	<property>
+	        <name>value</name>
+	        <type>String</type>
+	        <value>You may ask, &quot;Why does this engine keep the paragraphs separated along with the other content?&quot; Well, when we put together a number of code tutorials for codeaffetionado we noticed a reoccurring work-flow. We typically wrote a paragraph summary, put up a code snippet, put another paragraph, etc. While this seems easy enough, more modern day blogging engines made this too complicated. The ones that didn't, had trouble with code snippets.</value>
+    	</property>
+    </node>
+    
+</node>
