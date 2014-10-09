@@ -2,8 +2,11 @@
 var LatchD = function(){
 	
 	var styles = [];
-	styles.push({ main: "georgia", title: "header-roboto"});
+	styles.push({ main: "georgia", title: "header-verdana"});
 	styles.push({ main: "libre-baskerville", title: "header-source-sans"});
+	styles.push({ main: "garamond", title: "header-helvetica"});
+	styles.push({ main: "baskerville", title: "header-franklin"});
+	styles.push({ main: "garamond", title: "header-gills"});
 	
 	var clearSelections = function(){
 		var paras = $("p[id],blockquote");

@@ -20,17 +20,43 @@ However, this blank file is available if you prefer
 	font-size: 14pt;
 }
 
+.garamond {
+	font-family: 'Garamond';
+	font-size: 16pt;
+}
+
+.baskerville {
+	font-family: 'Baskerville';
+	font-size: 16pt;
+}
+
 .libre-baskerville {
 	font-family: "Libre Baskerville",serif;
 	font-size: 14pt;
+}
+
+.header-verdana {
+	font-family: 'Verdana';
 }
 
 .header-roboto {
 	font-family: 'Roboto', sans-serif;
 }
 
+.header-helvetica{
+	font-family: 'Helvetica', sans-serif;
+}
+
+.header-franklin {
+	font-family: 'Franklin Gothic Medium';
+}
+
 .header-source-sans {
 	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header-gills {
+	font-family: 'Gill Sans';
 }
 
 .justified {
@@ -55,11 +81,6 @@ h5[id=subheading]{
 
 .header-ms-sans {
 	font-family: "MS Sans Serif";
-}
-
-.garamond {
-	font-family: Garamond;
-	font-size: 14pt;
 }
 
 .ms-serif {

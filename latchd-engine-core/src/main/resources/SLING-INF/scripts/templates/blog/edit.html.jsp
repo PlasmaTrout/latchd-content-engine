@@ -31,8 +31,11 @@
     	<li><a href="#">Style</a>
     		<div class="dropdown">
     			<ul>
-	    			<li><a href="#" onclick="return LatchD.setTypography(0);">Georgia/Roboto (Default)</a></li>
-	    			<li><a href="#" onclick="return LatchD.setTypography(1);">Baskerville/Source Sans</a></li>
+	    			<li><a href="#" onclick="LatchD.setTypography(0);LatchD.save('${path}','typeset',0);">Georgia/Verdana (Default)</a></li>
+	    			<li><a href="#" onclick="LatchD.setTypography(1);LatchD.save('${path}','typeset',1);">Baskerville/Source Sans</a></li>
+	    			<li><a href="#" onclick="LatchD.setTypography(2);LatchD.save('${path}','typeset',2);">Garamond/Helvetica</a></li>
+	    			<li><a href="#" onclick="LatchD.setTypography(3);LatchD.save('${path}','typeset',3);">Baskerville/Franklin Gothic</a></li>
+	    			<li><a href="#" onclick="LatchD.setTypography(4);LatchD.save('${path}','typeset',4);">Garamond/Gills Sans</a></li>
     			</ul>
     		</div>
     	</li>
@@ -70,12 +73,12 @@
 	</div>
 	<div class="eight columns">
 		<h2 contenteditable=true
-			class="header-roboto"
+			class="header-verdana"
 			id="headline"
 			class="header-open-type"
 			onblur="return LatchD.save('${path}','headline',this.innerText);"><%= map.get("headline") %></h2>
 		<h5 contenteditable=true
-			class="header-roboto"
+			class="header-verdana"
 			id="subheading"
 			onblur="return LatchD.save('${path}','subheading',this.innerText);"
 			style="margin-top: -10px;margin-left: 6px;margin-bottom:20px;"><%= map.get("subheading") %></h5>
