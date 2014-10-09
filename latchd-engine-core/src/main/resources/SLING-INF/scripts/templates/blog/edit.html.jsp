@@ -20,9 +20,9 @@
     	<li><a href="#">Document</a>
     	<div class="dropdown">
     		<ul>
-    			<li><a href="#">Add Paragraph</a></li>
+    			<li><a href="#" onclick="return LatchD.newParagraph('${path}');">Add Paragraph</a></li>
     			<li><a href="#">Add Image</a></li>
-    			<li><a href="#">Add Quote</a></li>
+    			<li><a href="#" onclick="return LatchD.newQuote('${path}');">Add Quote</a></li>
     			<li><a href="#">Add Latch</a></li>
     		</ul>
     	</div>
@@ -44,7 +44,7 @@
 
 <div class="row" style="margin-top: 80px;">
 	<div class="two columns">
-		<h1>&nbsp;</h1>
+		<div style="margin-top: 100px;">&nbsp;</div>
 		<div id="adjustments">
 			<label class="topcoat-switch">
 				<input type="checkbox" class="topcoat-switch__input" id="dropcapinput"
@@ -80,8 +80,7 @@
 		<h5 contenteditable=true
 			class="header-verdana"
 			id="subheading"
-			onblur="return LatchD.save('${path}','subheading',this.innerText);"
-			style="margin-top: -10px;margin-left: 6px;margin-bottom:20px;"><%= map.get("subheading") %></h5>
+			onblur="return LatchD.save('${path}','subheading',this.innerText);"><%= map.get("subheading") %></h5>
 		<%
 			while(it.hasNext()){
 				Node node = it.nextNode();
@@ -94,6 +93,7 @@
 	</div>
 	<div class="two columns">
 		<h2>&nbsp;</h2>
+		<h5>&nbsp;</h5>
 		<button class="topcoat-icon-button--large" onclick="return LatchD.newParagraph('<%= currentNode.getPath() %>');">
 			<span class="topcoat-icon--large" style="background-color:#A5A7A7;"></span>
 		</button>

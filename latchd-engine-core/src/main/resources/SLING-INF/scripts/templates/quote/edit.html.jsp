@@ -10,7 +10,7 @@
 <blockquote class="style4" onclick="LatchD.highlight(this);">
 	<p rel="quote"
 		contenteditable=true
-		onblur="return LatchD.save('${path}','value',escape(this.innerText));">${value}<p>
+		onblur="return LatchD.save('${path}','value',this.innerText);">${sling:encode(value,'HTML')}<p>
 	<div class="blockauthor"
 		contenteditable=true
 		onblur="return LatchD.save('${path}','source',this.innerText);">

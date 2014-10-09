@@ -69,6 +69,31 @@ var LatchD = function(){
 			console.log("Error: "+error);
 		});
 	};
+
+	var saveNewQuote = function(path,value,author){
+
+		var data = {
+			"sling:resourceType": "latchd/templates/quote"
+		}
+
+		if(value){
+			data["value"] = value;
+		}
+
+		if(author){
+			data["author"] = author;
+		}
+
+		$.ajax({
+			type: "POST",
+			url: path,
+			data: data
+		}).done(function(){
+			 console.log("new quote saved!");
+		}).fail(function(error){
+			console.log("Error: "+error);
+		});
+	};
 	
 	var changeIndent = function(value){
 		var ps = $("p[id]");
@@ -103,6 +128,34 @@ var LatchD = function(){
 		$(ele).focus();
 		
 	};
+
+	var newQuote = function(stringPath){
+		var ele = document.createElement("blockquote");
+		ele.innerText = "";
+		ele.setAttribute("class","styl4");
+		ele.setAttribute("onclick","LatchD.highlight(this);");
+
+		var p = document.createElement("p");
+		p.setAttribute("rel","quote");
+		p.setAttribute("contenteditable",true);
+		p.setAttribute("onblur","return LatchD.save('"+stringPath+"','value',this.innerText);");
+		p.innerText = "Never look a gift horse in the mouth!";
+
+		var div = document.createElement("div");
+		div.setAttribute("class","blockquote");
+		div.setAttribute("contenteditable",true);
+		p.setAttribute("onblur","return LatchD.save('"+stringPath+"','author',this.innerText);");
+		div.innerText = "The Horse - 2014";
+
+		ele.appendChild(p);
+		ele.appendChild(div);
+
+		$(ele).insertBefore("#byline");
+
+		saveNewQuote(stringPath+"/",p.innerText,div.innerText);
+
+		$(ele).focus();
+	}
 	
 	var dropCapOn = function(){
 		var first = $("p[id]").first();
@@ -185,7 +238,9 @@ var LatchD = function(){
 		find: findSelectedPara,
 		paragraphChanged: paragraphChanged,
 		newParagraph: newParagraph,
+		newQuote: newQuote,
 		saveNewParagraph: saveNewParagraph,
+		saveNewQuote: saveNewQuote,
 		dropcap: dropCap,
 		indent: changeIndent,
 		save: setValue,

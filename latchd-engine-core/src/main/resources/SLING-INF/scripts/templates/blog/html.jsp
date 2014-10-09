@@ -9,7 +9,7 @@
 <div class="row">
 	<div class="centered eight columns">
 		<h2 id="headline"><%= map.get("headline") %></h2>
-		<h5 id="subheading" style="margin-top: -10px;margin-left: 6px;margin-bottom:20px;"><%= map.get("subheading") %></h5>
+		<h5 id="subheading"><%= map.get("subheading") %></h5>
 		<%
 			while(it.hasNext()){
 				Node node = it.nextNode();

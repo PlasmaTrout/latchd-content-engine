@@ -24,7 +24,7 @@
     <property>
         <name>headline</name>
         <type>String</type>
-        <value>Finally, A Document Engine</value>
+        <value>LatchD, A Document Engine</value>
     </property>
     <property>
         <name>subheading</name>
@@ -34,7 +34,7 @@
     <property>
         <name>typeset</name>
         <type>String</type>
-        <value>1</value>
+        <value>3</value>
     </property>
     
     <node>
@@ -82,6 +82,19 @@
 	        <name>value</name>
 	        <type>String</type>
 	        <value>You may ask, &quot;Why does this engine keep the paragraphs separated along with the other content?&quot; Well, when we put together a number of code tutorials for codeaffetionado we noticed a reoccurring work-flow. We typically wrote a paragraph summary, put up a code snippet, put another paragraph, etc. While this seems easy enough, more modern day blogging engines made this too complicated. The ones that didn't, had trouble with code snippets.</value>
+    	</property>
+    </node>
+    <node>
+    	<name>paragraph3</name>
+    	<property>
+	        <name>sling:resourceType</name>
+	        <type>String</type>
+	        <value>latchd/templates/paragraph</value>
+    	</property>
+    	<property>
+    		<name>value</name>
+    		<type>String</type>
+    		<value>Once again we find ourselves adding another paragraph just to test this thing. I have never done so much inconsequential writing in my life. Just when I think I am done. I accidentally erase this block and have to do the whole thing over again. Man, I'm an idiot.</value>
     	</property>
     </node>
     
