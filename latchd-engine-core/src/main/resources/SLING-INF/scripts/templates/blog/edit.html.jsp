@@ -43,8 +43,9 @@
 </div>	
 
 <div class="row" style="margin-top: 80px;">
-	<div class="two columns">
-		<div style="margin-top: 100px;">&nbsp;</div>
+	<div class="two columns" id="toolbelt">
+		<div style="margin-top: 150px;">&nbsp;</div>
+		
 		<div id="adjustments">
 			<label class="topcoat-switch">
 				<input type="checkbox" class="topcoat-switch__input" id="dropcapinput"
@@ -71,6 +72,9 @@
 			 onchange="return LatchD.save('<%= currentNode.getPath() %>','indent',this.value);">
 		</div>
 	</div>
+	<div class="one columns">
+		&nbsp;
+	</div>
 	<div class="eight columns">
 		<h2 contenteditable=true
 			class="header-verdana"
@@ -90,13 +94,6 @@
 		%>
 		<p id="byline">October 10, 2014 - <%= map.get("author") %></p>
 		<p>Edit Mode</p>
-	</div>
-	<div class="two columns">
-		<h2>&nbsp;</h2>
-		<h5>&nbsp;</h5>
-		<button class="topcoat-icon-button--large" onclick="return LatchD.newParagraph('<%= currentNode.getPath() %>');">
-			<span class="topcoat-icon--large" style="background-color:#A5A7A7;"></span>
-		</button>
 	</div>
 </div>
 <sling:include path="/content/templates/footer.html"/>
