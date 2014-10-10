@@ -81,7 +81,33 @@
     	<property>
 	        <name>value</name>
 	        <type>String</type>
-	        <value>You may ask, &quot;Why does this engine keep the paragraphs separated along with the other content?&quot; Well, when we put together a number of code tutorials for codeaffetionado we noticed a reoccurring work-flow. We typically wrote a paragraph summary, put up a code snippet, put another paragraph, etc. While this seems easy enough, more modern day blogging engines made this too complicated. The ones that didn't, had trouble with code snippets.</value>
+	        <value>You may ask, &quot;Why does this engine keep the paragraphs separated along with the other content?&quot; Well, when we put together a number of code tutorials for codeaffetionado we noticed a reoccurring work-flow. We typically wrote a paragraph summary, put up a code snippet, put another paragraph, etc. While this seems easy enough, more modern day blogging engines made this too complicated. The ones that didn't, had trouble with code snippets like this:</value>
+    	</property>
+    </node>
+    <node>
+    	<name>code1</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+    		<name>sling:resourceType</name>
+    		<type>String</type>
+    		<value>latchd/templates/snippet</value>
+    	</property>
+    	<property>
+    		<name>language</name>
+    		<type>String</type>
+    		<value>java</value>
+    	</property>
+    	<property>
+    		<name>highlight</name>
+    		<type>String</type>
+    		<value>2</value>
+    	</property>
+    	<property>
+    		<name>value</name>
+    		<type>String</type>
+    		<value>public static void Main(String[]) {
+	System.out.println("Hello Dean!");
+}</value>
     	</property>
     </node>
     <node>

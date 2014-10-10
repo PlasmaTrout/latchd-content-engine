@@ -4,8 +4,9 @@
 <%
 	ValueMap map = resource.adaptTo(ValueMap.class);
 %>
-
-	<script src="/static/js/latchd.js"></script>
-	<script src="/static/js/prism.js"></script>
-</body>
-</html>
+<pre class='language-<%= map.get("language","bash") %>'
+	id="<%= currentNode.getPath() %>"
+	data-line='<%= map.get("highlight",0) %>'
+	onclick="return LatchD.editCode(this);">
+	<code><%= map.get("value","") %></code>
+</pre>

@@ -213,7 +213,7 @@ var LatchD = function(){
 	var setTitleFont = function(value){
 		$(":header[id]").addClass(value);
 		$("p[rel=quote]").addClass(value);
-	}
+	};
 	
 	var setTypography = function(value){
 		var style = styles[value];
@@ -222,7 +222,7 @@ var LatchD = function(){
 			setMainFont(style.main);
 			setTitleFont(style.title);
 		}
-	}
+	};
 	
 	var justify = function(value){
 		var ps = $("p[id]");
@@ -231,7 +231,35 @@ var LatchD = function(){
 		}else{
 			ps.removeClass("justified");
 		}
-	}
+	};
+	
+	var preToTextArea = function(item){
+		var code = $(item.children[0]).text();
+		$("item").hide();
+		
+		var ta = document.createElement("textarea");
+		ta.setAttribute("class","topcoat-textarea");
+		ta.setAttribute("rows",10);
+		ta.setAttribute("cols",64);
+		ta.setAttribute("id",item.id);
+		ta.setAttribute("onchange","LatchD.exitCode(this);");
+		$(ta).text(code);
+		
+		$(ta).insertBefore(item);
+		$(ta).focus();
+	};
+	
+	var exitCodeEdit = function(item){
+		var id = item.id;
+		var code = item.value;
+		console.log(item);
+		
+		$("pre[id='"+id+"'] code").text(code);
+		$("pre").show();
+		$(item).remove();
+		
+		Prism.highlightAll();
+	};
 	
 	return {
 		highlight: highlightSelection,
@@ -245,6 +273,8 @@ var LatchD = function(){
 		indent: changeIndent,
 		save: setValue,
 		setTypography: setTypography,
-		justify: justify
+		justify: justify,
+		editCode: preToTextArea,
+		exitCode: exitCodeEdit
 	};
 }();
