@@ -20,7 +20,7 @@
     	<li><a href="#">Document</a>
     	<div class="dropdown">
     		<ul>
-    			<li><a href="#" onclick="return LatchD.newParagraph('${path}');">Add Paragraph</a></li>
+    			<li><a href="#" onclick="LatchD.newParagraph('${path}');">Add Paragraph</a></li>
     			<li><a href="#">Add Image</a></li>
     			<li><a href="#" onclick="return LatchD.newQuote('${path}');">Add Quote</a></li>
     			<li><a href="#">Add Latch</a></li>
@@ -70,6 +70,12 @@
 			 value='<%= map.get("indent",0) %>'
 			 oninput="return LatchD.indent(this.value);"
 			 onchange="return LatchD.save('<%= currentNode.getPath() %>','indent',this.value);">
+		</div>
+		<div>
+			<button class="topcoat-button"
+				onclick="LatchD.newParagraph('${path}');">&#xB6;</button>
+			<button class="topcoat-button"
+				onclick="LatchD.newQuote('${path}');">&#x2033;</button>
 		</div>
 	</div>
 	<div class="one columns">

@@ -63,7 +63,7 @@ var LatchD = function(){
 			type: "POST",
 			url: item.id,
 			data: { value: item.innerText, "sling:resourceType": "latchd/templates/paragraph" }
-		}).done(function(){
+		}).done(function(response,obj,a){ 
 			 console.log("new paragraph saved!");
 		}).fail(function(error){
 			console.log("Error: "+error);
@@ -125,8 +125,9 @@ var LatchD = function(){
 		ele.setAttribute("contenteditable",true);
 		ele.setAttribute("onblur","LatchD.saveNewParagraph(this);");
 		$(ele).insertBefore("#byline");
-		$(ele).focus();
 		
+		$(ele).focus();
+		ele.scrollIntoView();
 	};
 
 	var newQuote = function(stringPath){
@@ -155,6 +156,7 @@ var LatchD = function(){
 		saveNewQuote(stringPath+"/",p.innerText,div.innerText);
 
 		$(ele).focus();
+		ele.scrollIntoView();
 	}
 	
 	var dropCapOn = function(){
