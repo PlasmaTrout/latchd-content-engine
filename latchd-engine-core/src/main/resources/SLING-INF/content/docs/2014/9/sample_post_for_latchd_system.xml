@@ -105,8 +105,10 @@
     	<property>
     		<name>value</name>
     		<type>String</type>
-    		<value>public static void Main(String[]) {
-	System.out.println("Hello Dean!");
+    		<value>public class HelloWorld {
+	public static void main(String[] args){
+		System.out.println("Hello World!");
+	}
 }</value>
     	</property>
     </node>

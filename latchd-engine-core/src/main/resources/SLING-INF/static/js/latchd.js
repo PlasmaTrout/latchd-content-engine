@@ -242,7 +242,7 @@ var LatchD = function(){
 		ta.setAttribute("rows",10);
 		ta.setAttribute("cols",64);
 		ta.setAttribute("id",item.id);
-		ta.setAttribute("onchange","LatchD.exitCode(this);");
+		ta.setAttribute("onblur","LatchD.exitCode(this);");
 		$(ta).text(code);
 		
 		$(ta).insertBefore(item);
@@ -258,8 +258,11 @@ var LatchD = function(){
 		$("pre").show();
 		$(item).remove();
 		
+		setValue(id,'value',code);
+		
 		Prism.highlightAll();
 	};
+	
 	
 	return {
 		highlight: highlightSelection,
