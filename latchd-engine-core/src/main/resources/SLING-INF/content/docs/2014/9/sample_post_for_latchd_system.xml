@@ -121,7 +121,21 @@
     	<property>
     		<name>value</name>
     		<type>String</type>
-    		<value>Once again we find ourselves adding another paragraph just to test this thing. I have never done so much inconsequential writing in my life. Just when I think I am done. I accidentally erase this block and have to do the whole thing over again. Man, I'm an idiot.</value>
+			<value>The above code snippet uses a standard code block. This means, if you click inside of it you can edit it by changing the code you see in the text window that appears above the block. In cases where the file you want to highlight has already been uploaded to the system, a file code block can be used. The following block was added to the system and uses a sample javascript file:</value>
+    	</property>
+    </node>
+    <node>
+    	<name>code2</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+    		<name>sling:resourceType</name>
+    		<type>String</type>
+    		<value>latchd/templates/snippet</value>
+    	</property>
+    	<property>
+    		<name>file</name>
+    		<type>String</type>
+    		<value>/static/js/sample.js</value>
     	</property>
     </node>
     
