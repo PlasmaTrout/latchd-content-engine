@@ -36,7 +36,6 @@
         <type>String</type>
         <value>3</value>
     </property>
-    
     <node>
     	<name>paragraph1</name>
     	<primaryNodeType>nt:unstructured</primaryNodeType>
