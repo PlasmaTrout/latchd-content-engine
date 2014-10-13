@@ -126,6 +126,14 @@ h5[id=subheading]{
 	font-family: 'EntypoRegular'
 }
 
+.captiondiv {
+	padding: 5px;
+	background-color: #eeeeee;
+	border-radius: 5px;
+	text-align: center;
+	border: 1px solid #cecece;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
    @font-face {
       font-family: 'entypo';

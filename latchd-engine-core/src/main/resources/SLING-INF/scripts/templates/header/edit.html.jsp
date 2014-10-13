@@ -13,6 +13,7 @@
 		<script src="/static/js/libs/jquery-2.0.2.min.js"></script>
 		<script src="/static/js/libs/modernizr-2.6.2.min.js"></script>
 		<script src="/static/js/libs/gumby.min.js"></script>
+		<script src="/static/js/libs/knockout-3.2.0.js"></script>
 		<script src="/system/sling.js"></script>		
 	</head>
 	<body>

@@ -102,7 +102,7 @@
 		<p>Edit Mode</p>
 	</div>
 </div>
-<sling:include path="/content/templates/footer.html"/>
+<sling:include path="/content/templates/footer.edit.html"/>
 <%
 	Boolean drop = map.get("dropcap",false);
 	if(map.get("dropcap",false)){
@@ -113,5 +113,6 @@
 	LatchD.indent(<%= map.get("indent",0) %>);
 	LatchD.justify(<%= map.get("justify",false) %>);
 	LatchD.setTypography(<%= map.get("typeset",0) %>);
+	
 </script>
 

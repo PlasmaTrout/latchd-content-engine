@@ -20,6 +20,7 @@ var LatchD = function(){
 			$("p[id]").removeClass(item.main);
 			$(":header[id]").removeClass(item.title);
 			$("p[rel=quote]").removeClass(item.title);
+			$("div[rel=image]").removeClass(item.title);
 		});
 	};
 	
@@ -203,6 +204,7 @@ var LatchD = function(){
 			data: data
 		}).done(function(){
 			 console.log(name+" : "+value+" saved to "+path);
+			 $("img[id='"+path+"']").attr("src",value);
 		}).fail(function(error){
 			console.log("Error: "+error);
 		});
@@ -215,6 +217,7 @@ var LatchD = function(){
 	var setTitleFont = function(value){
 		$(":header[id]").addClass(value);
 		$("p[rel=quote]").addClass(value);
+		$("div[rel=image]").addClass(value);
 	};
 	
 	var setTypography = function(value){

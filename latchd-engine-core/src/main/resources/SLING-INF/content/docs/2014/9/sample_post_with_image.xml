@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+	<primaryNodeType>nt:unstructured</primaryNodeType>
+	<property>
+        <name>sling:resourceType</name>
+        <type>String</type>
+        <value>latchd/templates/blog</value>
+    </property>
+    <property>
+        <name>author</name>
+        <type>String</type>
+        <value>J.Downing</value>
+    </property>
+    <property>
+        <name>dropcap</name>
+        <type>Boolean</type>
+        <value>true</value>
+    </property>
+    <property>
+        <name>justify</name>
+        <type>Boolean</type>
+        <value>true</value>
+    </property>
+    <property>
+        <name>headline</name>
+        <type>String</type>
+        <value>LatchD, A Document Engine</value>
+    </property>
+    <property>
+        <name>subheading</name>
+        <type>String</type>
+        <value>with some real typography</value>
+    </property>
+    <property>
+        <name>typeset</name>
+        <type>String</type>
+        <value>3</value>
+    </property>
+    <node>
+    	<name>paragraph1</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+	        <name>sling:resourceType</name>
+	        <type>String</type>
+	        <value>latchd/templates/paragraph</value>
+    	</property>
+    	<property>
+	        <name>value</name>
+	        <type>String</type>
+	        <value>The engine can also support images, however it loads them from content as well and doesn't directly attach them to the blog post. Instead, it links them and sizes them here. If you want to upload an image, you first have to go to the media upload section of your account and upload the images you want. Then when you add an image component, you simply point to the one that you want by using its path.</value>
+    	</property>
+    </node>
+    <node>
+    	<name>image1</name>
+    	<primaryNodeType>nt:unstructured</primaryNodeType>
+    	<property>
+    		<name>sling:resourceType</name>
+    		<type>String</type>
+    		<value>latchd/templates/image</value>
+    	</property>
+    	<property>
+    		<name>value</name>
+    		<type>String</type>
+    		<value>/uploads/images/steps.jpg</value>
+    	</property>
+    	<property>
+    		<name>caption</name>
+    		<type>String</type>
+    		<value>Indiatlantic Beach Entrance - July 2014</value>
+    	</property>
+    </node>
+ </node>
