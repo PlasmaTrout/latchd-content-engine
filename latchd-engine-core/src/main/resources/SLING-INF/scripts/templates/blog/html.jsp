@@ -6,18 +6,20 @@
 	ValueMap map = resource.adaptTo(ValueMap.class);
 	NodeIterator it = currentNode.getNodes();
 %>
-<div class="row">
-	<div class="centered eight columns">
-		<h2 id="headline"><%= map.get("headline") %></h2>
-		<h5 id="subheading"><%= map.get("subheading") %></h5>
-		<%
-			while(it.hasNext()){
-				Node node = it.nextNode();
-				String path = node.getPath()+".html";
-				%><sling:include path="<%= path %>"/><%
-			}
-		%>
-		<p>October 10, 2014 - <%= map.get("author") %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 col-md-offset-2">
+			<h2 id="headline"><%= map.get("headline") %></h2>
+			<h5 id="subheading"><%= map.get("subheading") %></h5>
+			<%
+				while(it.hasNext()){
+					Node node = it.nextNode();
+					String path = node.getPath()+".html";
+					%><sling:include path="<%= path %>"/><%
+				}
+			%>
+			<p>October 10, 2014 - <%= map.get("author") %></p>
+		</div>
 	</div>
 </div>
 

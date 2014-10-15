@@ -6,11 +6,14 @@
 	ValueMap map = resource.adaptTo(ValueMap.class);
 %>
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
-<div class="modal" id="<%= currentNode.getName() %>">
-	<div class="content">
-		<div class="row">
-			<div class="eight columns centered text-center">
-				<h2>Choose Image</h2>
+<div class="modal fade" id="<%= currentNode.getName() %>" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModelLabel">Image Chooser</h4>
+			</div>
+			<div class="modal-body">
 				<div data-bind="foreach: imagelist" style="height: 230px;overflow: auto;">
 					<div style="float: left;">
 						<img data-bind="attr{ src: path, id: path }"
@@ -19,9 +22,9 @@
 					</div>
 				</div>
 				<div style="clear: both"></div>
-				<p class="btn primary medium">
-          			<a href="#" class="switch" gumby-trigger="|#<%= currentNode.getName() %>">Close Modal</a>
-        		</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

@@ -8,6 +8,8 @@ var LatchD = function(){
 	styles.push({ main: "baskerville", title: "header-franklin"});
 	styles.push({ main: "garamond", title: "header-gills"});
 	
+	var currentStyle = 0;
+	
 	var clearSelections = function(){
 		var paras = $("p[id],blockquote");
 		paras.each(function(ix,item){
@@ -126,8 +128,13 @@ var LatchD = function(){
 		ele.setAttribute("contenteditable",true);
 		ele.setAttribute("onblur","LatchD.saveNewParagraph(this);");
 		$(ele).insertBefore("#byline");
+		setTypography(currentStyle);
 		
 		$(ele).focus();
+		
+		
+		
+		
 		ele.scrollIntoView();
 	};
 
@@ -223,6 +230,7 @@ var LatchD = function(){
 	var setTypography = function(value){
 		var style = styles[value];
 		if(style){
+			currentStyle = value;
 			clearFonts();
 			setMainFont(style.main);
 			setTitleFont(style.title);

@@ -12,8 +12,9 @@
 	<img src='<%= map.get("value") %>'
 		 alt='<%= map.get("caption","") %>'
 		 id="${path}"
-		 class="switch"
-		 gumby-trigger="#<%= currentNode.getName() %>"
+		 class="img-responsive"
+		 data-toggle="modal"
+		 data-target="#<%= currentNode.getName() %>"
 		 onclick="ko.applyBindings(LatchD.imagemodel);"
 		 />
 	<span contenteditable=true

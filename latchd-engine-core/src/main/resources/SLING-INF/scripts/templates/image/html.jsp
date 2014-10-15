@@ -8,6 +8,7 @@
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
 <div rel="image" class="captiondiv">
 	<img src='<%= map.get("value") %>'
+		 class="img-responsive"
 		 alt='<%= map.get("caption","") %>'
 		 id="${path}"/>
 	<span><%= map.get("caption","") %></span>

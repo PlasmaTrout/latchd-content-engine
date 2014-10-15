@@ -132,6 +132,7 @@ h5[id=subheading]{
 	border-radius: 5px;
 	text-align: center;
 	border: 1px solid #cecece;
+	margin-bottom: 10px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -166,6 +167,11 @@ div.blockauthor {
 	margin-top: 10px;
 	font-size: smaller;
 	font-weight: bolder;
+}
+
+pre {
+	background: none;
+	border: none;
 }
 
 pre[class*='language-'] > code[data-language] {
