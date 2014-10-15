@@ -16,7 +16,7 @@ to the root of the project and run:
 
 ```
 mvn -PautoInstallBundle install
-``
+```
 
 To install the project. Once installed you should be able to see the following pages:
 
