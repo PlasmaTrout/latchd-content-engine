@@ -97,7 +97,7 @@
 						<span class="glyphicon glyphicon-comment"></span>
 					</button>
 					<button class="btn button-default"
-						onclick="LatchD.newQuote('${path}');">
+						onclick="LatchD.newImage('${path}');">
 						<span class="glyphicon glyphicon-picture"></span>
 					</button>
 				</div>

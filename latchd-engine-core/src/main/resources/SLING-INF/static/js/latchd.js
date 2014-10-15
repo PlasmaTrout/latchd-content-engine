@@ -121,7 +121,6 @@ var LatchD = function(){
 	}
 	
 	var newParagraph = function(stringPath){
-		var d = new Date();
 		var ele = document.createElement("p");
 		ele.innerText = "";
 		ele.setAttribute("id",stringPath+"/");
@@ -129,13 +128,27 @@ var LatchD = function(){
 		ele.setAttribute("onblur","LatchD.saveNewParagraph(this);");
 		$(ele).insertBefore("#byline");
 		setTypography(currentStyle);
-		
 		$(ele).focus();
-		
-		
-		
-		
 		ele.scrollIntoView();
+	};
+	
+	var newImage = function(path){
+		var data = {
+				"sling:resourceType": "latchd/templates/image",
+				value: "/uploads/images/steps.jpg",
+				caption: "Indiatlantic Beach Entrance - July 2014"
+			}
+
+			$.ajax({
+				type: "POST",
+				url: path+"/",
+				data: data
+			}).done(function(){
+				 console.log("new image saved!");
+				 window.location.reload();
+			}).fail(function(error){
+				console.log("Error: "+error);
+			});
 	};
 
 	var newQuote = function(stringPath){
@@ -285,6 +298,7 @@ var LatchD = function(){
 		newQuote: newQuote,
 		saveNewParagraph: saveNewParagraph,
 		saveNewQuote: saveNewQuote,
+		newImage: newImage,
 		dropcap: dropCap,
 		indent: changeIndent,
 		save: setValue,
