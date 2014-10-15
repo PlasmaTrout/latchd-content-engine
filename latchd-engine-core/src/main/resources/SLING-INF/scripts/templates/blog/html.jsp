@@ -27,11 +27,11 @@
 <%
 	Boolean drop = map.get("dropcap",false);
 	if(map.get("dropcap",false)){
-		%><script>LatchD.dropcap();</script><%
+		%><script>LatchD.style.dropcap();</script><%
 	}
 %>
 <script>
-	LatchD.indent(<%= map.get("indent",0) %>);
-	LatchD.justify(<%= map.get("justify",false) %>);
-	LatchD.setTypography(<%= map.get("typeset",0) %>);
+	LatchD.style.indent(<%= map.get("indent",0) %>);
+	LatchD.style.justify(<%= map.get("justify",false) %>);
+	LatchD.style.setTypography(<%= map.get("typeset",0) %>);
 </script>

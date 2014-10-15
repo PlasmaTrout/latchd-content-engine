@@ -8,5 +8,5 @@
 	rel="contentblock"
 	class="georgia"
 	contenteditable="true"
-	onclick="LatchD.highlight(this);"
-	onblur="LatchD.paragraphChanged(this);"><%= map.get("value") %></p>
+	onclick="LatchD.editmode.highlight(this);"
+	onblur="LatchD.editmode.paragraphChanged(this);"><%= map.get("value") %></p>

@@ -18,5 +18,5 @@
 		 onclick="ko.applyBindings(LatchD.imagemodel);"
 		 />
 	<span contenteditable=true
-		 onblur="return LatchD.save('${path}','caption',this.innerText);"><%= map.get("caption","") %></span>
+		 onblur="return LatchD.editmode.save('${path}','caption',this.innerText);"><%= map.get("caption","") %></span>
 </div>

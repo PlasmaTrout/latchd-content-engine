@@ -30,3 +30,10 @@ If you change the selectors to edit.html you can access the editable content:
 
 Clicking on each paragraph of text or control is used to present its editable dialog, however 
 most content is content editable.
+
+If you want to upload a image temporarily to play around the URL
+
+* http://localhost:8080/content/media/photo.new.html
+
+is where you want to go.
+

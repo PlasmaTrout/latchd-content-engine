@@ -5,7 +5,8 @@
 	ValueMap map = resource.adaptTo(ValueMap.class);
 %>
 
-	<script src="/static/js/latchd.js"></script>
+	<script src="/static/js/latchd/latchd-style.js"></script>
+	<script src="/static/js/latchd/latchd-editmode.js"></script>
 	<script src="/static/js/prism.js"></script>
 	<script src="/static/js/models/images_model.js"></script>
 	 <script src="/static/js/bootstrap.min.js"></script>

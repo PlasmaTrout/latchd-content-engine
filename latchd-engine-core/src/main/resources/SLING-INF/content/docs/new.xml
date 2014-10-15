@@ -4,6 +4,6 @@
 	<property>
         <name>sling:resourceType</name>
         <type>String</type>
-        <value>latchd/templates/newpost</value>
+        <value>latchd/templates/new</value>
     </property>
 </node>

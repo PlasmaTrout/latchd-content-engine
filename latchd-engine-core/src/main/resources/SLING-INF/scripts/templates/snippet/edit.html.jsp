@@ -12,7 +12,7 @@
 <pre class='language-<%= map.get("language","bash") %>'
 	id="<%= currentNode.getPath() %>"
 	data-line='<%= map.get("highlight",0) %>'
-	onclick="return LatchD.editCode(this);">
+	onclick="return LatchD.editmode.editCode(this);">
 	<code><%= map.get("value","") %></code>
 </pre>
 <% } %>

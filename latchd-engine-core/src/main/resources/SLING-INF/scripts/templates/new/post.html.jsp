@@ -5,6 +5,8 @@
 <div class="container">
 	<div class="row" style="margin-top: 100px;">
 		<h4>Create A New Posting</h4>
+		<p>A posting is just a blog or article that will be saved according the year and month it was made. 
+		These will typically be ordered with the most current first and be available on a users document page</p>
 		<form role="form" id="newpostform">
 			<div class="form-group">
 				<label for="headline">Heading</label>

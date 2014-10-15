@@ -7,12 +7,12 @@
 %>
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
 <c:set var="value" value='<%= map.get("value") %>'/>
-<blockquote class="style4" onclick="LatchD.highlight(this);">
+<blockquote class="style4" onclick="LatchD.editmode.highlight(this);">
 	<p rel="quote"
 		contenteditable=true
-		onblur="return LatchD.save('${path}','value',this.innerText);">${sling:encode(value,'HTML')}<p>
+		onblur="return LatchD.editmode.save('${path}','value',this.innerText);">${sling:encode(value,'HTML')}<p>
 	<div class="blockauthor"
 		contenteditable=true
-		onblur="return LatchD.save('${path}','source',this.innerText);">
+		onblur="return LatchD.editmode.save('${path}','source',this.innerText);">
 		<%= map.get("source","") %></div>
 </blockquote>
