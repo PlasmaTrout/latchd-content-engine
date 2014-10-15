@@ -259,6 +259,39 @@ var LatchD = function(){
 		}
 	};
 	
+	var newPost = function(){
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth();
+		var path = "/content/docs/"+year+"/"+month+"/";
+		var data = {
+			dropcap: false,
+			headline: $("#headline")[0].value,
+			subheading: $("#subheading")[0].value,
+			justify: true,
+			typeset: 0,
+			author: Sling.getSessionInfo().userID,
+			"sling:resourceType": "latchd/templates/blog",
+			"jcr:title": $("#headline")[0].value,
+			"jcr:primaryType": "nt:unstructured"
+		}
+		
+		$.ajax({
+			type: "POST",
+			url: path,
+			headers: {
+				"Accept": "application/json,/;q=0.9"
+			},
+			data: data
+		}).done(function(item){
+			 console.log("new post saved! "+item);
+			 window.location.href = item.path+".edit.html";
+			 
+		}).fail(function(error){
+			console.log("Error: "+error);
+		});
+	}
+	
 	var preToTextArea = function(item){
 		var code = $(item.children[0]).text();
 		$("item").hide();
@@ -305,6 +338,7 @@ var LatchD = function(){
 		setTypography: setTypography,
 		justify: justify,
 		editCode: preToTextArea,
-		exitCode: exitCodeEdit
+		exitCode: exitCodeEdit,
+		newPost: newPost
 	};
 }();
