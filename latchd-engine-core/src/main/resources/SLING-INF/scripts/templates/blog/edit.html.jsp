@@ -10,6 +10,7 @@
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
 <div class="container-fluid">
 <div class="row" style="margin-top: 80px;">
+	<div id="modal-view" ng-view></div>
 	<div class="col-md-1">
 		&nbsp;
 	</div>

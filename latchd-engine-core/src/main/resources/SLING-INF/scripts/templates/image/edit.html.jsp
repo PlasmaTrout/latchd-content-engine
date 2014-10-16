@@ -7,16 +7,14 @@
 	String path = currentNode.getPath()+".picker.html";
 %>
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
-<sling:include path='<%= path %>'/>
+<c:set var="name" value="<%= currentNode.getName() %>"/>
 <div rel="image" class="captiondiv">
-	<img src='<%= map.get("value") %>'
-		 alt='<%= map.get("caption","") %>'
-		 id="${path}"
-		 class="img-responsive"
-		 data-toggle="modal"
-		 data-target="#<%= currentNode.getName() %>"
-		 onclick="ko.applyBindings(LatchD.imagemodel);"
-		 />
+	<a href="#/images/${name}" data-toggle="modal" data-target="#modalview">
+		<img src='<%= map.get("value") %>'
+			 alt='<%= map.get("caption","") %>'
+			 id="${path}"
+			 class="img-responsive"/>
+	</a>
 	<span contenteditable=true
 		 onblur="return LatchD.editmode.save('${path}','caption',this.innerText);"><%= map.get("caption","") %></span>
 </div>
