@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/PlasmaTrout/latchd-content-engine.png?label=ready&title=Ready)](https://waffle.io/PlasmaTrout/latchd-content-engine)
 # LatchD Documentation Engine
 This document engine is a work in progress that's not quote ready for primetime but has
 some sample documents rendered by it.
