@@ -53,6 +53,29 @@ LatchD.editmode = function(){
 		}
 	};
 	
+	var login = function(){
+		var object = {
+			j_username: "",
+			j_password: "",
+			"_charset_": "UTF-8",
+			"resource": "/content/landing.html"
+		};
+		
+		object.j_username = $("#username")[0].value;
+		object.j_password = $("#password")[0].value;
+		
+		$.ajax({
+			type: "POST",
+			url: "/j_security_check",
+			data: object,
+		}).done(function(result){
+			console.log(result);
+			window.location.href="/content/landing.html";
+		}).fail(function(error){
+			console.log(error);
+		});
+	}
+	
 	var saveNewParagraph = function(item){
 		$.ajax({
 			type: "POST",
@@ -241,7 +264,8 @@ LatchD.editmode = function(){
 		save: setValue,
 		editCode: preToTextArea,
 		exitCode: exitCodeEdit,
-		newPost: newPost
+		newPost: newPost,
+		login: login
 	};
 	
 }();

@@ -1,0 +1,82 @@
+<% sling.include("/content/templates/header.landing.html"); %>
+<%
+	var articles = [];
+	
+	function findArticles(node){
+		
+		if(node.hasProperty("sling:resourceType")){
+			if(node.getProperty("sling:resourceType").getString().equals("latchd/templates/blog")){
+				
+				var article = {
+					headline: node.getProperty("headline").getString(),
+					subheading: node.getProperty("subheading").getString(),
+					path: node.getPath()+".html",
+					image: "/static/img/LatchDHeader.png"
+				};
+				
+				articles.push(article);
+			}
+		}
+		
+		var result = node.nodes;
+		while(result.hasNext()){
+			var node = result.nextNode();
+			
+			//See if there is an image tag here and if so use it as a thumbnail
+			if(node.hasProperty("sling:resourceType")){
+				if(node.getProperty("sling:resourceType").getString().equals("latchd/templates/image")){
+					articles[articles.length-1].image = node.getProperty("value").getString();
+				}
+			}
+			
+			findArticles(node);
+		}
+			
+	};
+	
+	var startNode = currentNode.getSession().getNode("/content/docs");
+	findArticles(startNode);
+	
+%>
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Posts</h3>
+			</div>
+			<div class="panel-body">
+				<% for(a in articles){ %>
+					<div class="media">
+						<a class="pull-left" href="<%= articles[a].path %>">
+							<img class="media-object" src="<%= articles[a].image %>" style="height: 64px; width: 64px;"/>
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading"><%= articles[a].headline %></h4>
+							<%= articles[a].subheading %>
+						</div>
+					</div> 
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Tutorials</h3>
+			</div>
+			<div class="panel-body">
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Books</h3>
+			</div>
+			<div class="panel-body">
+			</div>
+		</div>
+	</div>
+</div>
+
+<% sling.include("/content/templates/footer.landing.html"); %>

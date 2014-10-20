@@ -24,7 +24,7 @@
     <property>
         <name>headline</name>
         <type>String</type>
-        <value>LatchD, A Document Engine</value>
+        <value>A Sample Post</value>
     </property>
     <property>
         <name>subheading</name>

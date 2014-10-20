@@ -24,12 +24,12 @@
     <property>
         <name>headline</name>
         <type>String</type>
-        <value>LatchD, A Document Engine</value>
+        <value>A Sample Post With An Image</value>
     </property>
     <property>
         <name>subheading</name>
         <type>String</type>
-        <value>with some real typography</value>
+        <value>and some typography</value>
     </property>
     <property>
         <name>typeset</name>
