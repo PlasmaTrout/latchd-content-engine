@@ -61,6 +61,10 @@
 						onclick="LatchD.editmode.newImage('${path}');">
 						<span class="glyphicon glyphicon-picture"></span>
 					</button>
+					<button class="btn button-default"
+						onclick="LatchD.wordchecker.checkAll();">
+						<span class="glyphicon glyphicon-wrench"></span>
+					</button>
 				</div>
 			</div>
 			</div>
@@ -88,8 +92,20 @@
 		<p>Edit Mode</p>
 	</div>
 	<div class="col-md-4">
-		&nbsp;
-	</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">Errors Key</div>
+			<div class="panel-body" id="errors">
+				<span class='label label-warning'>&nbsp;</span>&nbsp;Buzzword<br/>
+				<span class='label label-primary'>&nbsp;</span>&nbsp;Fad<br/>
+				<span class='label label-info'>&nbsp;</span>&nbsp;Hackneyed media writing
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">Double Check</div>
+			<div class="panel-body" id="defs">
+				
+			</div>
+		</div>
 	</div>
 </div>
 </div>

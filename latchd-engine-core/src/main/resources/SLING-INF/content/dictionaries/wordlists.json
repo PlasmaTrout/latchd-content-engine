@@ -1,0 +1,32 @@
+{
+	"sling:resourceType": "nt:unstructured",
+	buzzwords: [
+	     "capitalization","components","deployment","elements",
+	     "facility","functionality","incentivation","indices",
+	     "input","integration","interface","leverage","logistical",
+	     "matrices","mechanism","operational","optimal","optimize",
+	     "optimum","paradigm shift","paradigm","parameters","preassessment",
+	     "prioritization","procedure","process","remediation","stage",
+	     "phase","level","strategic","strategize","synergy","system",
+	     "utilization","utilize"
+	],
+	mediawords: [
+		"amid","arguably","beleagured","bloody coup","bottom line","bottomed out","brought under fire",
+		"burgeoning","cautious optimism","chilling effect","cries of protest","critical mass","cutting edge",
+		"decimate","defining moment","delegate-rich","drew fire","dynasty","economic crunch","embattled",
+		"eponymous","escalated","escalating conflict","facility","famously","freefall","ground zero","hammered out",
+		"hard line","heated debate","heated exchange","heightened criticism","held hostage","hot line",
+		"hotly contested","in the wake of","infrastructure","jump start","laundry list","level the playing field",
+		"litany","looking to","low profile","mushroom","oil-rich","on the ground","on the upswing","political football",
+		"political suicide","reeling","resonate","send a message","send a signal","sharp decrease","skyrocketing",
+		"soft line","spark","spawn","spur","staggering","staunch defense","steep decline","strife-torn","stunning",
+		"sudden downturn","surprise move","sweeping","thin line","unleash a new round","unprecedented",
+		"venue","wide-ranging","widespread violence","witch hunt","worst-case scenario"
+	],
+	fadwords: [
+	     "closure","cobble together","cusp","empowerment","got game","has a problem with","has issues",
+	     "having said that","impact","litmus test","make no mistake about it","material breach",
+	     "mental toughness","push the envelope","raise the bar","ramp up","ratchet up","rush to judgment",
+	     "that said","window of oppurtunity","24-7"
+	]
+}

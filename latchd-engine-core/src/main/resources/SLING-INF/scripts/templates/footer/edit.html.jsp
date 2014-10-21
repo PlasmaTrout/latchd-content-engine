@@ -7,6 +7,7 @@
 
 	<script src="/static/js/latchd/latchd-style.js"></script>
 	<script src="/static/js/latchd/latchd-editmode.js"></script>
+    <script src="/static/js/latchd/latchd-buzzwords.js"></script>
 	<script src="/static/js/prism.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 </body>

@@ -47,6 +47,7 @@ LatchD.editmode = function(){
 				data: { value: item.innerText }
 			}).done(function(){
 				 console.log("successfull save!");
+				 LatchD.wordchecker.checkPara(item);
 			}).fail(function(error){
 				console.log("Error: "+error);
 			});
@@ -83,6 +84,7 @@ LatchD.editmode = function(){
 			data: { value: item.innerText, "sling:resourceType": "latchd/templates/paragraph" }
 		}).done(function(response,obj,a){ 
 			 console.log("new paragraph saved!");
+			 
 		}).fail(function(error){
 			console.log("Error: "+error);
 		});

@@ -1,0 +1,53 @@
+{
+	"sling:resourceType": "nt:unstructured",
+	rules: [
+		{
+			words: ["abjure","adjure"],
+			usage: ["disavow, renounce","to place someone under oath"]
+		},
+		{
+			words: ["abrogate","arrogate"],
+			usage: ["to abolish or annul","to claim or seize without right"]
+		},
+		{
+			words: ["affect","effect"],
+			usage: ["(verb) influence, impress, touch, sway","(noun) consequence, result, outcome"]
+		},
+		{
+			words: ["allude","elude"],
+			usage: ["to refer to","to escape or evade"]
+		},
+		{
+			words: ["all right","alright"],
+			usage: ["the accepted form","a considered misspelling"]
+		},
+		{
+			words: ["a lot","alot"],
+			usage: ["the accepted form","avoid"]
+		},
+		{
+			words: ["awhile","a while"],
+			usage: ["(adverb) meaning for a brief time (stay awhile)","(noun) meaning an indefinite time (a while)"]
+		},
+		{
+			words: ["bate","bait"],
+			usage: ["to reduce in force or intensity (as in bated breath)","(noun) a lure, (verb) to lure"]
+		},
+		{
+			words: ["balky","bulky"],
+			usage: ["uncooperative, contrary","big, having bulk, unwieldy"]
+		},
+		{
+			words: ["boast","boost"],
+			usage: ["to brag","(verb) to support or promote, (noun) a push"]
+		},
+		{
+			words: ["bruit","brute"],
+			usage: ["to noise abroad, to spread rumor","beast"]
+		},
+		{
+			words: ["bus","buss"],
+			usage: ["vehicle","kiss"]
+		}
+	]
+}
