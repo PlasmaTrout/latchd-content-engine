@@ -1,0 +1,31 @@
+<% request.setAttribute("title",currentNode.headline); %>
+<% sling.include("/content/templates/header.html"); %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 col-md-offset-2">
+			<h2 id="headline">${currentNode.headline}</h2>
+			<h5 id="subheading">${currentNode.subheading}</h5>
+			<%
+				var it = currentNode.nodes;
+				while(it.hasNext()){
+					var node = it.nextNode();
+					var path = node.getPath()+".html";
+					sling.include(path);
+				}
+			%>
+			<p>October 10, 2014 - ${currentNode.author}</p>
+		</div>
+	</div>
+</div>
+
+<% sling.include("/content/templates/footer.html"); %>
+<%
+	if(currentNode.dropcap){
+		%><script>LatchD.style.dropcap();</script><%
+	}
+%>
+<script>
+	LatchD.style.indent(<%= currentNode.indent %>);
+	LatchD.style.justify(<%= currentNode.justify %>);
+	LatchD.style.setTypography(<%= currentNode.typeset %>);
+</script>

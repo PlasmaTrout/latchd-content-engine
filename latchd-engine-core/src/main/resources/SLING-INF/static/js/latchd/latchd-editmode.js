@@ -89,6 +89,18 @@ LatchD.editmode = function(){
 			console.log("Error: "+error);
 		});
 	};
+	
+	var saveNewItem = function(item,resourceType){
+		$.ajax({
+			type: "POST",
+			url: item.id,
+			data: { value: item.innerText, "sling:resourceType": resourceType }
+		}).done(function(response,obj,a){ 
+			 console.log("new "+resourceType+" saved to "+item.id);
+		}).fail(function(error){
+			console.log("Error: "+error);
+		});
+	};
 
 	var saveNewQuote = function(path,value,author){
 
@@ -121,6 +133,37 @@ LatchD.editmode = function(){
 		ele.setAttribute("id",stringPath+"/");
 		ele.setAttribute("contenteditable",true);
 		ele.setAttribute("onblur","LatchD.editmode.saveNewParagraph(this);");
+		$(ele).insertBefore("#byline");
+		LatchD.style.refreshTypography();
+		$(ele).focus();
+		ele.scrollIntoView();
+	};
+	
+	var newSnippet = function(path){
+		var data = {
+			"sling:resourceType": "latchd/templates/snippet",
+			value: "System.out.println(\"Hello World\");",
+			language: "java",
+			"jcr:primaryType": "nt:unstructured"
+		}
+		$.ajax({
+			type: "POST",
+			url: path+"/",
+			data: data
+		}).done(function(){
+			 console.log("new image saved!");
+			 window.location.reload();
+		}).fail(function(error){
+			console.log("Error: "+error);
+		});
+	};
+	
+	var newHeader = function(stringPath){
+		var ele = document.createElement("h2");
+		ele.innerText = "New Section";
+		ele.setAttribute("id",stringPath+"/");
+		ele.setAttribute("contenteditable",true);
+		ele.setAttribute("onblur","LatchD.editmode.saveNewItem(this,'latchd/templates/heading');");
 		$(ele).insertBefore("#byline");
 		LatchD.style.refreshTypography();
 		$(ele).focus();
@@ -243,13 +286,18 @@ LatchD.editmode = function(){
 	var exitCodeEdit = function(item){
 		var id = item.id;
 		var code = item.value;
-		console.log(item);
 		
 		$("pre[id='"+id+"'] code").text(code);
 		$("pre").show();
 		$(item).remove();
-		
 		setValue(id,'value',code);
+		
+		if(code.substring(0,6) === "sling:"){
+			setValue(id,'file',code.substring(6));
+			window.location.reload();
+		}else{
+			setValue(id,'file','');
+		}
 		
 		Prism.highlightAll();
 	};
@@ -260,9 +308,12 @@ LatchD.editmode = function(){
 		paragraphChanged: paragraphChanged,
 		newParagraph: newParagraph,
 		newQuote: newQuote,
+		newHeader: newHeader,
 		saveNewParagraph: saveNewParagraph,
 		saveNewQuote: saveNewQuote,
+		saveNewItem: saveNewItem,
 		newImage: newImage,
+		newSnippet: newSnippet,
 		save: setValue,
 		editCode: preToTextArea,
 		exitCode: exitCodeEdit,

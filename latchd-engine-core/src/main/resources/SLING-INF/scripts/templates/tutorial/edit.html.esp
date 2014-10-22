@@ -1,23 +1,33 @@
 <% request.setAttribute("title",currentNode.headline); %>
+<% request.setAttribute("parentpath",currentNode.path); %>
 <% sling.include("/content/templates/header.edit.html"); %>
 <div class="container-fluid">
 	<div class="row" style="margin-top: 60px;">
 		<div class="col-md-12">
 			<div class="btn-toolbar" role="toolbar">
 				<div class="btn-group">
-					<button class="btn button-default"
+					<button class="btn button-default" title="Adds a new paragraph"
+					data-toggle="tooltip" data-placement="bottom"
 					onclick="LatchD.editmode.newParagraph('${currentNode.path}');">
 						<span class="glyphicon glyphicon-plus"></span>
 					</button>
-					<button class="btn button-default"
+					<button class="btn button-default" title="Adds a new step"
+						data-toggle="tooltip" data-placement="bottom"
+						onclick="LatchD.editmode.newHeader('${currentNode.path}');">
+						<span class="glyphicon glyphicon-header"></span>
+					</button>
+					<button class="btn button-default" title="Adds a new quote block"
+						data-toggle="tooltip" data-placement="bottom"
 						onclick="LatchD.editmode.newQuote('${currentNode.path}');">
 						<span class="glyphicon glyphicon-comment"></span>
 					</button>
-					<button class="btn button-default"
+					<button class="btn button-default" title="Adds an images from uploads directory"
+						data-toggle="tooltip" data-placement="bottom"
 						onclick="LatchD.editmode.newImage('${currentNode.path}');">
 						<span class="glyphicon glyphicon-picture"></span>
 					</button>
-					<button class="btn button-default"
+					<button class="btn button-default" title="Performs spell and grammer checks"
+						data-toggle="tooltip" data-placement="bottom"
 						onclick="LatchD.wordchecker.checkAll();">
 						<span class="glyphicon glyphicon-wrench"></span>
 					</button>
@@ -39,15 +49,29 @@
 			class="header-open-type"
 			onblur="return LatchD.editmode.save('${currentNode.path}','headline',this.innerText);"><%= currentNode.headline %></h1>
 			<%
-				var nodes = currentNode.nodes;
-				while(nodes.hasNext()){
-					var node = nodes.next();
-					sling.include(node.getPath()+".edit.html");
+				var tutorialNodes = currentNode.nodes;
+				while(tutorialNodes.hasNext()){
+					var node = tutorialNodes.nextNode();
+					var includePath = node.getPath()+".edit.html";
+					sling.include(includePath);
 				}
 			%>
+			<p id="byline">October 10, 2014 - <%= currentNode.author %></p>
+			<p>Edit Mode</p>
 		</div>
 		<div class="col-md-4">
 		</div>
 	</div>
 </div>
 <% sling.include("/content/templates/footer.edit.html"); %>
+<%
+	if(currentNode.dropcap){
+		%><script>LatchD.style.dropcap();</script><%
+	}
+%>
+<script>
+	LatchD.style.indent(<%= currentNode.indent %>);
+	LatchD.style.justify(<%= currentNode.justify %>);
+	LatchD.style.setTypography(<%= currentNode.typeset %>);
+	$("button").tooltip();
+</script>

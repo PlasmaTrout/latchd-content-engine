@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="LatchDApp">
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'> -->
 		<%
 			var n = currentNode.getSession().getNode("/content/landing");
 			var bname = n.getProperty("sitename");
+			currentNode.parent = request.getAttribute("parentpath");
 		%>
 		<title><%= bname+"-"+request.getAttribute("title") %></title>
 		<link rel="stylesheet" href="/static/css/prism.css"/>
@@ -44,11 +45,11 @@
 		    	<li class="dropdown">
 		    		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Typography<span class="caret"></a>
 		    		<ul class="dropdown-menu" role="menu">
-		    			<li><a href="#" onclick="LatchD.style.setTypography(0);LatchD.editmode.save('${currentNode.path}','typeset',0);">Georgia/Verdana (Default)</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(1);LatchD.editmode.save('${currentNode.path}','typeset',1);">Baskerville/Source Sans</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(2);LatchD.editmode.save('${currentNode.path}','typeset',2);">Garamond/Helvetica</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(3);LatchD.editmode.save('${currentNode.path}','typeset',3);">Baskerville/Franklin Gothic</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(4);LatchD.editmode.save('${currentNode.path}','typeset',4);">Garamond/Gills Sans</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(0);LatchD.editmode.save('${currentNode.parent}','typeset',0);">Georgia/Verdana (Default)</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(1);LatchD.editmode.save('${currentNode.parent}','typeset',1);">Baskerville/Source Sans</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(2);LatchD.editmode.save('${currentNode.parent}','typeset',2);">Garamond/Helvetica</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(3);LatchD.editmode.save('${currentNode.parent}','typeset',3);">Baskerville/Franklin Gothic</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(4);LatchD.editmode.save('${currentNode.parent}','typeset',4);">Garamond/Gills Sans</a></li>
     				</ul>
 		    	</li>
 		    	<li class="dropdown">

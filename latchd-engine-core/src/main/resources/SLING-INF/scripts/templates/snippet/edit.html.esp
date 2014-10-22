@@ -1,0 +1,26 @@
+<%
+if(currentNode.file){ %>
+
+<pre data-src='${currentNode.file}' onclick="return LatchD.editmode.editCode(this);"></pre>
+
+<%	} else { %>
+
+<pre class='language-${currentNode.language}'
+	id="${currentNode.path}"
+	<% if(currentNode.dataline){ out.print("data-line='"+currentNode.dataline+"'"); } %>
+	onclick="return LatchD.editmode.editCode(this);">
+	<code><%= currentNode.value %></code>
+</pre>
+<label class="radio-inline">
+  <input type="radio" name="${currentNode.name}-inlineRadioOptions" id="inlineRadio1" value="bash" checked> bash
+</label>
+<label class="radio-inline">
+  <input type="radio" name="${currentNode.name}-inlineRadioOptions" id="inlineRadio2" value="java"> java
+</label>
+<label class="radio-inline">
+  <input type="radio" name="${currentNode.name}-inlineRadioOptions" id="inlineRadio3" value="c#"> markup
+</label>
+<label class="radio-inline">
+  <input type="radio" name="${currentNode.name}-inlineRadioOptions" id="inlineRadio3" value="javascript"> javascript
+</label>
+<% } %>

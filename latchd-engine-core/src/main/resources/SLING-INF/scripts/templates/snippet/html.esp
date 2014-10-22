@@ -1,0 +1,13 @@
+<%
+if(currentNode.file){ %>
+
+<pre data-src='<%= map.get("file") %>'></pre>
+
+<%	} else { %>
+
+<pre class='language-${currentNode.language}'
+	id="${currentNode.path}" 
+	<% if(currentNode.dataline){ out.print("data-line='"+currentNode.dataline+"'"); } %>>
+	<code><%= currentNode.value %></code>
+</pre>
+<% } %>

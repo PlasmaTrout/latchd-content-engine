@@ -1,4 +1,5 @@
 <% request.setAttribute("title",currentNode.headline); %>
+<% request.setAttribute("parentpath",currentNode.path); %>
 <%= sling.include("/content/templates/header.edit.html") %>
 <div class="container-fluid">
 <div class="row" style="margin-top: 80px;">
