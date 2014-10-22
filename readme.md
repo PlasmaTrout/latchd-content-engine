@@ -1,9 +1,15 @@
 [![Stories in Ready](https://badge.waffle.io/PlasmaTrout/latchd-content-engine.png?label=ready&title=Ready)](https://waffle.io/PlasmaTrout/latchd-content-engine)
 # LatchD Documentation Engine
-This document engine is a work in progress that's not quote ready for primetime but has
-some sample documents rendered by it.
+This document engine is a work in progress that's not quite ready for primetime. The goal is to have a place
+to edit documentation and tutorials effectively without the hassle of most blog engines. 
  
-![Screenshot 1](screen1.png)
+![Screenshot 1 - Current State](screen1.png)
+ 
+ Is displayed as:
+ 
+![Screenshot 3 - Current State](screen3.png)
+
+To normal readers or visitors.
 
 ## Mission
 The vision of LatchD has gone through several iterations over the last few years,
