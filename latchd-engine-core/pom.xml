@@ -45,6 +45,8 @@
                             SLING-INF/content/docs/2014;overwrite:=true;uninstall:=true;path:=/content/docs/2014,
                             SLING-INF/content/docs/2014/9;overwrite:=true;uninstall:=true;path:=/content/docs/2014/9,
                             SLING-INF/content/books;overwrite:=true;uninstall:=true;path:=/content/books,
+                            SLING-INF/content/tutorials;overwrite:=true;uninstall:=true;path:=/content/tutorials,
+                            SLING-INF/content/tutorials/osgi;overwrite:=true;uninstall:=true;path:=/content/tutorials/osgi,
                             SLING-INF/static;overwrite:=true;uninstall:=true;path:=/static,
                             SLING-INF/uploads;overwrite:=true;uninstall:=true;path:=/uploads
                         </Sling-Initial-Content>

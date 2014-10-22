@@ -1,0 +1,9 @@
+<h${currentNode.level} id="${currentNode.name}">${currentNode.value}</h${currentNode.level}>
+<hr/>
+<%
+	var nodes = currentNode.nodes;
+		while(nodes.hasNext()){
+			var node = nodes.next();
+			sling.include(node.getPath()+".edit.html");
+		}
+%>

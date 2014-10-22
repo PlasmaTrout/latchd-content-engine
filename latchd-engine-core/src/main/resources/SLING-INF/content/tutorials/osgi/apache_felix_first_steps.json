@@ -1,0 +1,59 @@
+{
+	"jcr:primaryType": "nt:unstructured",
+	"sling:resourceType": "latchd/templates/tutorial",
+	"headline": "Apache Felix - First Steps",
+	"author": "J.Downing",
+	"dropcap": true,
+	"justify": true,
+	"typeset": 2,
+	"indent": 0,
+	"para1": {
+		"jcr:primaryType": "nt:unstructured",
+		"sling:resourceType": "latchd/templates/paragraph",
+		"value": "OSGi has been a mature framework for building modular applications for quite some time. It has however, not not been embraced by the development community. The primary reason it remains a mystery to the development world lies in its lack of beginning level tutorials or classes. This tutorial attempts to begin a series of labs to demystify the OSGi framework and begin familiarity with Apache Felix."
+	},
+	"para2": {
+		"jcr:primaryType": "nt:unstructured",
+		"sling:resourceType": "latchd/templates/paragraph",
+		"value": "This tutorial is designed to provide guidance on downloading, installing and configuring Apache Felix for use in classroom labs. It’s designed to end with a bare bones installation and provide a starting point needed in the remainder of the tutorials that will be given on Apache Felix."
+	},
+	"step1": {
+		"jcr:primaryType": "nt:unstructured",
+		"sling:resourceType": "latchd/templates/heading",
+		"level": 2,
+		"value": "Getting Apache Felix",
+		"para12": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "latchd/templates/paragraph",
+			"value": "Apache Felix is pretty easy to get started with regardless of what discipline of development you come from. The first step is to get your hands on the binary, which at time of write is found at the following URL:"
+		},
+		"code1": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "latchd/templates/snippet",
+			"value": "http://felix.apache.org/downloads.cgi",
+			"language": "bash"
+		},
+		"para22": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "latchd/templates/paragraph",
+			"value": "These labs were designed to mimic the framework you will see most often in Adobe CQ and Apache Sling, which is why we are using Apache Felix. There are, however, a plethora of OSGi frameworks to choose from and can have fun downloading and trying a few others out. Keep in mind, while some of the other frameworks will make things considerably easier, they may in fact, deviate from the OSGi Alliance’s original specifications. If we work in Felix we are almost certain to be R4 compliant."
+		}
+	},
+	"step2": {
+		"jcr:primaryType": "nt:unstructured",
+		"sling:resourceType": "latchd/templates/heading",
+		"level": 2,
+		"value": "Installing Apache Felix",
+		"para12": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "latchd/templates/paragraph",
+			"value": "Apache Felix is pretty easy to get started with regardless of what discipline of development you come from. The first step is to get your hands on the binary, which at time of write is found at the following URL:"
+		},
+		"code1": {
+			"jcr:primaryType": "nt:unstructured",
+			"sling:resourceType": "latchd/templates/snippet",
+			"value": "$HOME/projects/apache-felix",
+			"language": "bash"
+		}
+	}
+}

@@ -1,13 +1,5 @@
-<%@page session="false" import="org.apache.sling.api.resource.*, javax.jcr.*"%>
-<%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<sling:defineObjects/>
-<sling:include path="/content/templates/header.edit.html"/>
-<%
-	ValueMap map = resource.adaptTo(ValueMap.class);
-	NodeIterator it = currentNode.getNodes();
-%>
-<c:set var="path" value="<%= currentNode.getPath() %>"/>
+<% request.setAttribute("title",currentNode.headline); %>
+<%= sling.include("/content/templates/header.edit.html") %>
 <div class="container-fluid">
 <div class="row" style="margin-top: 80px;">
 	<div id="modal-view" ng-view></div>
@@ -22,25 +14,25 @@
 			<div id="adjustments" class="checkbox">
 				<label>
 					<input type="checkbox" id="dropcapinput"
-					 onchange="return LatchD.editmode.save('${path}','dropcap',this.checked);"
-					 onclick="return LatchD.style.dropcap();" <%= map.get("dropcap",false) ? "checked" : "" %> >
+					 onchange="return LatchD.editmode.save('${currentNode.path}','dropcap',this.checked);"
+					 onclick="return LatchD.style.dropcap();" <%= currentNode.dropcap ? "checked" : "" %> >
 					 Drop Caps
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
 					<input type="checkbox" id="justifyinput"
-					 onchange="return LatchD.editmode.save('${path}','justify',this.checked);"
-					 onclick="return LatchD.style.justify(this.checked);" <%= map.get("justify",false) ? "checked" : "" %> >
+					 onchange="return LatchD.editmode.save('${currentNode.path}','justify',this.checked);"
+					 onclick="return LatchD.style.justify(this.checked);" <%= currentNode.justify ? "checked" : "" %> >
 					 Justify
 				</label>
 			</div>
 			<div id="indentdiv" style="margin-top: 10px;">
-				<span class="tool-label" id="indentspan">Indent Size <%= map.get("indent",0) %>px</span>
+				<span class="tool-label" id="indentspan">Indent Size <%= currentNode.indent %>px</span>
 				<input type="range" id="indentrange"
-				 value='<%= map.get("indent",0) %>'
+				 value='${currentNode.indent}'
 				 oninput="return LatchD.style.indent(this.value);"
-				 onchange="return LatchD.editmode.save('<%= currentNode.getPath() %>','indent',this.value);">
+				 onchange="return LatchD.editmode.save('${currentNode.path}','indent',this.value);">
 			</div>
 			</div>
 		</div>
@@ -50,15 +42,15 @@
 				<div class="btn-toolbar" role="toolbar">
 				<div class="btn-group">
 					<button class="btn button-default"
-					onclick="LatchD.editmode.newParagraph('${path}');">
+					onclick="LatchD.editmode.newParagraph('${currentNode.path}');">
 						<span class="glyphicon glyphicon-plus"></span>
 					</button>
 					<button class="btn button-default"
-						onclick="LatchD.editmode.newQuote('${path}');">
+						onclick="LatchD.editmode.newQuote('${currentNode.path}');">
 						<span class="glyphicon glyphicon-comment"></span>
 					</button>
 					<button class="btn button-default"
-						onclick="LatchD.editmode.newImage('${path}');">
+						onclick="LatchD.editmode.newImage('${currentNode.path}');">
 						<span class="glyphicon glyphicon-picture"></span>
 					</button>
 					<button class="btn button-default"
@@ -76,19 +68,19 @@
 			class="header-verdana"
 			id="headline"
 			class="header-open-type"
-			onblur="return LatchD.editmode.save('${path}','headline',this.innerText);"><%= map.get("headline") %></h2>
+			onblur="return LatchD.editmode.save('${currentNode.path}','headline',this.innerText);"><%= currentNode.headline %></h2>
 		<h5 contenteditable=true
 			class="header-verdana"
 			id="subheading"
-			onblur="return LatchD.editmode.save('${path}','subheading',this.innerText);"><%= map.get("subheading") %></h5>
+			onblur="return LatchD.editmode.save('${currentNode.path}','subheading',this.innerText);"><%= currentNode.subheading %></h5>
 		<%
+			var it = currentNode.nodes;
 			while(it.hasNext()){
-				Node node = it.nextNode();
-				String path = node.getPath()+".edit.html";
-				%><sling:include path="<%= path %>"/><%
+				var node = it.nextNode();
+				sling.include(node.getPath()+".edit.html");
 			}
 		%>
-		<p id="byline">October 10, 2014 - <%= map.get("author") %></p>
+		<p id="byline">October 10, 2014 - <%= currentNode.author %></p>
 		<p>Edit Mode</p>
 	</div>
 	<div class="col-md-4">
@@ -109,17 +101,17 @@
 	</div>
 </div>
 </div>
-<sling:include path="/content/templates/footer.edit.html"/>
+<% sling.include("/content/templates/footer.edit.html"); %>
 <%
-	Boolean drop = map.get("dropcap",false);
-	if(map.get("dropcap",false)){
+	if(currentNode.dropcap){
 		%><script>LatchD.style.dropcap();</script><%
 	}
 %>
 <script>
-	LatchD.style.indent(<%= map.get("indent",0) %>);
-	LatchD.style.justify(<%= map.get("justify",false) %>);
-	LatchD.style.setTypography(<%= map.get("typeset",0) %>);
-	
+	LatchD.style.indent(<%= currentNode.indent %>);
+	LatchD.style.justify(<%= currentNode.justify %>);
+	LatchD.style.setTypography(<%= currentNode.typeset %>);
 </script>
+
+
 
