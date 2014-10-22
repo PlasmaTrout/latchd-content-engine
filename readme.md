@@ -2,6 +2,8 @@
 # LatchD Documentation Engine
 This document engine is a work in progress that's not quote ready for primetime but has
 some sample documents rendered by it.
+ 
+![Screenshot 1](screen1.png)
 
 ## Mission
 The vision of LatchD has gone through several iterations over the last few years,

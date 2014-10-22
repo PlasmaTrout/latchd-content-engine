@@ -43,11 +43,11 @@
 		    	<li class="dropdown">
 		    		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Typography<span class="caret"></a>
 		    		<ul class="dropdown-menu" role="menu">
-		    			<li><a href="#" onclick="LatchD.style.setTypography(0);LatchD.edtior.save('${path}','typeset',0);">Georgia/Verdana (Default)</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(1);LatchD.edtior.save('${path}','typeset',1);">Baskerville/Source Sans</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(2);LatchD.edtior.save('${path}','typeset',2);">Garamond/Helvetica</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(3);LatchD.edtior.save('${path}','typeset',3);">Baskerville/Franklin Gothic</a></li>
-		    			<li><a href="#" onclick="LatchD.style.setTypography(4);LatchD.edtior.save('${path}','typeset',4);">Garamond/Gills Sans</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(0);LatchD.editmode.save('${path}','typeset',0);">Georgia/Verdana (Default)</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(1);LatchD.editmode.save('${path}','typeset',1);">Baskerville/Source Sans</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(2);LatchD.editmode.save('${path}','typeset',2);">Garamond/Helvetica</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(3);LatchD.editmode.save('${path}','typeset',3);">Baskerville/Franklin Gothic</a></li>
+		    			<li><a href="#" onclick="LatchD.style.setTypography(4);LatchD.editmode.save('${path}','typeset',4);">Garamond/Gills Sans</a></li>
     				</ul>
 		    	</li>
 		    	<li class="dropdown">
