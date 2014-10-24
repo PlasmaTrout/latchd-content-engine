@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/PlasmaTrout/latchd-content-engine.png?label=ready&title=Ready)](https://waffle.io/PlasmaTrout/latchd-content-engine)
+e![StorieD_tree_1dy](https://badge.waffle.io/PlasmaTrout/latchd-content-engine.png?label=ready&title=Ready)](https://waffle.io/PlasmaTrout/latchd-content-engine)
 # LatchD Documentation Engine
 This document engine is a work in progress that's not quite ready for primetime. The goal is to have a place
 to edit documentation and tutorials effectively without the hassle of most blog engines. 
