@@ -35,6 +35,9 @@
 	};
 	
 	var startNode = currentNode.getSession().getNode("/content/docs");
+    var tutorialsNode = currentNode.getSession().getNode("/content/tutorials");
+    var tutorials = tutorialsNode.nodes;
+
 	findArticles(startNode);
 	
 %>
@@ -48,7 +51,7 @@
 				<% for(a in articles){ %>
 					<div class="media">
 						<a class="pull-left" href="<%= articles[a].path %>">
-							<img class="media-object" src="<%= articles[a].image %>" style="height: 64px; width: 64px;"/>
+							<img class="media-object" src="<%= articles[a].image %>" style="width: 64px;"/>
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading"><%= articles[a].headline %></h4>
@@ -59,15 +62,33 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Tutorials</h3>
-			</div>
-			<div class="panel-body">
-			</div>
-		</div>
-	</div>
+   <% while(tutorials.hasNext()) {
+      var tnode = tutorials.nextNode();  %>
+
+	    <div class="col-md-4">
+		    <div class="panel panel-default">
+			    <div class="panel-heading">
+				    <h3 class="panel-title"><%= tnode.title %></h3>
+			    </div>
+			    <div class="panel-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <%
+                                var tlist = tnode.nodes;
+                                while(tlist.hasNext()){  
+                                    var tlnode = tlist.nextNode();
+                                    var newpath = tlnode.headline+".html";
+                            %>
+                                    <h4 class="media-heading"><a href="${newpath}"><%= tlnode.headline %></a></h4>
+
+                            <% } %>
+                        </div>
+                    </div>
+    		    </div>
+		    </div>
+	    </div>
+
+    <% } %>
 	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-heading">
