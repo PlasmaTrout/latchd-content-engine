@@ -95,21 +95,7 @@
 		<p id="byline">October 10, 2014 - <%= currentNode.author %></p>
 		<p>Edit Mode</p>
 	</div>
-	<div class="col-md-4">
-		<div class="panel panel-primary">
-			<div class="panel-heading">Errors Key</div>
-			<div class="panel-body" id="errors">
-				<span class='label label-warning'>&nbsp;</span>&nbsp;Buzzword<br/>
-				<span class='label label-primary'>&nbsp;</span>&nbsp;Fad<br/>
-				<span class='label label-info'>&nbsp;</span>&nbsp;Hackneyed media writing
-			</div>
-		</div>
-		<div class="panel panel-primary">
-			<div class="panel-heading">Double Check</div>
-			<div class="panel-body" id="defs">
-				
-			</div>
-		</div>
+	<div class="col-md-4" id="alerts-div">
 	</div>
 </div>
 </div>

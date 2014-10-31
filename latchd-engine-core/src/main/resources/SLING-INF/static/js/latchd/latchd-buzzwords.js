@@ -16,7 +16,7 @@ LatchD.wordchecker = function(){
 				// Brute forces capitalized instanced of the word
 				var uword = word[0].toUpperCase()+word.substring(1);
 				text = text.replace(uword,generateTags(uword,errorcolor,errorText));
-				
+			    flagText(errorText,"warning");	
 			}
 		});
 		para.innerHTML = text;
@@ -43,10 +43,18 @@ LatchD.wordchecker = function(){
 		});
 		para.innerHTML = text;
 	};
+
+    var flagText = function(msg, level){
+        var div = document.createElement("div");
+        div.setAttribute("class","alert alert-"+level);
+        div.setAttribute("role","alert");
+        div.innerText = msg;
+        document.querySelector("#alerts-div").appendChild(div);
+    };
 	
 	var createWarning = function(checkObj){
 		var div = document.createElement("div");
-		div.setAttribute("class","alert alert-warning");
+		div.setAttribute("class","alert alert-info");
 		div.setAttribute("role","alert");
 		
 		var dl = document.createElement("dl");
@@ -64,12 +72,13 @@ LatchD.wordchecker = function(){
 		
 		div.appendChild(dl);
 		
-		document.querySelector("#defs").appendChild(dl);
-		
+		document.querySelector("#alerts-div").appendChild(div);
+
+
 	};
 	
 	var clearWarnings = function(){
-		var dls = document.querySelectorAll("dl");
+		var dls = document.querySelectorAll("div[role=alert],dl");
 		if(dls){
 			for(var x = 0; x < dls.length; x++){
 				dls[x].remove();
