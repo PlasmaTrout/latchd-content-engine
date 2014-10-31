@@ -4,6 +4,7 @@
 <%
 	ValueMap map = resource.adaptTo(ValueMap.class);
 %>
+
 <p id="<%= currentNode.getPath() %>"
 	rel="contentblock"
 	class="georgia"

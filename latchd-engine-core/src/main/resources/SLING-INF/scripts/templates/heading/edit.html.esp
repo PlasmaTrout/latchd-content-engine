@@ -1,9 +1,6 @@
 <%
 	var level = currentNode.level ? currentNode.level : 2;
 %>
-<h${level} contenteditable=true
-	id="${currentNode.name}"
-	onblur="return LatchD.editmode.save('${currentNode.path}','value',this.innerText);">${currentNode.value}
 	<div class="btn-toolbar" role="toolbar" style="float: right;">
 		<div class="btn-group">
 			<button class="btn button-default" title="Adds a new paragraph"
@@ -23,6 +20,12 @@
 			</button>
 		</div>
 	</div>
+<h${level} contenteditable=true
+	id="${currentNode.name}"
+	onblur="return LatchD.editmode.save('${currentNode.path}','value',this.innerText);">
+    <% if(currentNode.value) { %>
+        ${currentNode.value}
+    <% } %>
 </h${level}>
 <hr/>
 <%

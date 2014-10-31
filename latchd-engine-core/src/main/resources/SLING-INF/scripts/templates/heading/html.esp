@@ -1,0 +1,15 @@
+<%
+	var level = currentNode.level ? currentNode.level : 2;
+%>
+
+    <% if(currentNode.value) { %>
+        <h2>${currentNode.value}</h2>
+    <% } %>
+
+<%
+		var headerNodes = currentNode.nodes;
+		while(headerNodes.hasNext()){
+			var node = headerNodes.nextNode();
+			sling.include(node.getPath()+".edit.html");
+		}
+%>

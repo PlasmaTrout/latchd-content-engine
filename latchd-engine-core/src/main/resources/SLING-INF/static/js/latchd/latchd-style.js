@@ -10,7 +10,8 @@ LatchD.style = function(){
 	styles.push({ main: "garamond", title: "header-gills"});
 	
 	var currentStyle = 0;
-	
+    var currentIndent = 0;
+
 	var clearFonts = function(){
 		$(styles).each(function(x,item){
 			$("p[id]").removeClass(item.main);
@@ -28,7 +29,29 @@ LatchD.style = function(){
 		}
 		$("#indentspan").html("Indent Size "+value+"px");
 		ps.attr("style","text-indent: "+value+"px");
+        currentIndent = value;
 	};
+
+    var increaseIndent = function(increment,currentValue){
+        var newVal = currentIndent+increment;
+        if(currentValue){
+            newVal = newVal+currentValue;
+        }
+        changeIndent(newVal);
+        return newVal;
+    };
+
+    var decreaseIndent = function(increment,currentValue){
+        var newVal = currentIndent-increment;
+        if(currentValue){
+            newVal = newVal-increment;
+        }
+        if(newVal <= 0){
+            newVal = 0;
+        }
+        changeIndent(newVal);
+        return newVal;
+    };
 	
 	var saveIndent = function(path,value){
 		$.ajax({
@@ -117,7 +140,9 @@ LatchD.style = function(){
 	
 	return {
 		dropcap: dropCap,
-		indent: changeIndent,
+        indent: changeIndent,
+        decreaseIndent: decreaseIndent,
+        increaseIndent: increaseIndent,
 		setTypography: setTypography,
 		justify: justify,
 		refreshTypography: refreshTypography
