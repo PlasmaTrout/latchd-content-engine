@@ -44,8 +44,13 @@
 				<div class="btn-group">
 					<button class="btn button-default"
 					onclick="LatchD.editmode.newParagraph('${currentNode.path}');">
-						<span class="glyphicon glyphicon-plus"></span>
+						<span class="glyphicon glyphicon-pencil"></span>
 					</button>
+                    <button class="btn button-default" title="Adds a new code snippet"
+                        data-toggle="tooltip" data-placement="bottom"
+                        onclick="LatchD.editmode.newSnippet('${currentNode.path}');">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
 					<button class="btn button-default"
 						onclick="LatchD.editmode.newQuote('${currentNode.path}');">
 						<span class="glyphicon glyphicon-comment"></span>
