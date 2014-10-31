@@ -277,7 +277,12 @@ LatchD.editmode = function(){
 		ta.setAttribute("cols",64);
 		ta.setAttribute("id",item.id);
 		ta.setAttribute("onblur","LatchD.editmode.exitCode(this);");
-		$(ta).text(code);
+	
+        if(item.id.indexOf("sling:") != -1){
+            $(ta).text(item.id);
+        }else{
+            $(ta).text(code);
+        }
 		
 		$(ta).insertBefore(item);
 		$(ta).focus();

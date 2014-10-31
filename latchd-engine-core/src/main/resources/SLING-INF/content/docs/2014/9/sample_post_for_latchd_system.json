@@ -3,6 +3,7 @@
     "headline": "A Sample Post",
     "subheading": "with some sample typography",
     "typeset": 3,
+    "value": "package org;\n\npublic class HelloWorld {\n\tpublic static void main(String[] args){\n\t\tSystem.out.println(\"hello\");\n\t\tSystem.out.println(\"hello\");\n\t\tSystem.out.println(\"hello\");\n\t}\n}\n",
     "author": "J.Downing",
     "sling:resourceType": "latchd/templates/blog",
     "jcr:primaryType": "nt:unstructured",
@@ -12,7 +13,7 @@
         "sling:resourceType": "latchd/templates/heading",
         "jcr:primaryType": "nt:unstructured",
         "para1": {
-            "value": "This post was created to show off some of the editing features available in the engine. If you noticed, all you can really do to the main document is add sections. Once a section has been added other things can be added to the section. This text you reading right now is inside a section, however it simple had no heading entered above it. If you click in the area on the top of this paragraph (just above the line) you will see the place were one can be added. Sections are required for text because they help form the table of contents later.",
+            "value": "This post was created to show off some of the editing features available in the engine. If you noticed, all you can really do to the main document is add effects. Once a section has been added other things can be added to the level. This text you reading right now is inside a section, however it simple had no heading entered above it. If you click in the area on the top of this paragraph (just above the line) you will see the place were one can be added. Sections are required for text because they help form the table of contents later.",
             "sling:resourceType": "latchd/templates/paragraph",
             "jcr:primaryType": "nt:unstructured"
         }
@@ -40,6 +41,34 @@
         "10_1414768368092": {
             "value": "As you can see, images are sized automatically to fit the display area the best they can. Images also have captions below them. To change the caption you can click on it and change the text. It will automatically save once you click or tab away.",
             "sling:resourceType": "latchd/templates/paragraph",
+            "jcr:primaryType": "nt:unstructured"
+        }
+    },
+    "11_1414772473335": {
+        "value": "Code Snippets",
+        "sling:resourceType": "latchd/templates/heading",
+        "jcr:primaryType": "nt:unstructured",
+        "12_1414772528992": {
+            "value": "You can also add code snippets to a section. When you add a code snippet you can either use the edit box to paste your snippet, or upload a code file to sling and point the box to it by using a special syntax.",
+            "sling:resourceType": "latchd/templates/paragraph",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "15_1414773265512": {
+            "language": "java",
+            "value": "System.out.println(\"Hello World\");",
+            "sling:resourceType": "latchd/templates/snippet",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "16_1414773336409": {
+            "value": "We can also just point to a file in the JCR using its path if we want to. To do this we need to prefix the file path inside the box and remove the rest of the content. When we do the box will be replaced with the contents from that area. Editing these types of boxes won't be allowed once they have been created.",
+            "sling:resourceType": "latchd/templates/paragraph",
+            "jcr:primaryType": "nt:unstructured"
+        },
+        "17_1414773462601": {
+            "language": "java",
+            "sling:resourceType": "latchd/templates/snippet",
+            "file": "/uploads/code/HelloWorld.java",
+            "value": "sling:/uploads/code/HelloWorld.java",
             "jcr:primaryType": "nt:unstructured"
         }
     }

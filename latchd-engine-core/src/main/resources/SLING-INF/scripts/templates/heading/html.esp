@@ -10,6 +10,6 @@
 		var headerNodes = currentNode.nodes;
 		while(headerNodes.hasNext()){
 			var node = headerNodes.nextNode();
-			sling.include(node.getPath()+".edit.html");
+			sling.include(node.getPath()+".html");
 		}
 %>

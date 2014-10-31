@@ -1,12 +1,12 @@
 <%
 if(currentNode.file){ %>
 
-<pre data-src='${currentNode.file}' onclick="return LatchD.editmode.editCode(this);"></pre>
+<pre data-src='${currentNode.file}' id="${currentNode.value}" onclick="return LatchD.editmode.editCode(this);"></pre>
 
 <%	} else { %>
 
 <pre class='language-${currentNode.language}'
-	id="${currentNode.path}"
+	id="${currentNode.path}" 
 	<% if(currentNode.dataline){ out.print("data-line='"+currentNode.dataline+"'"); } %>
 	onclick="return LatchD.editmode.editCode(this);">
 	<code><%= currentNode.value %></code>
