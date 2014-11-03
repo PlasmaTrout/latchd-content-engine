@@ -40,11 +40,20 @@ LatchD.editmode = function(){
 		if(localStorage.getItem(item.id) === item.innerText){
 			console.log("No changes noticed!");
 		}else{
+			var data = { value: item.innerText };
 			console.log(item.id+" was changed, we need to save it!");
+			
+			// If we have a blank paragraph delete it, this is the primary way
+			// to remove content
+			if(!item.innerText){
+				console.log("blank paragraph found switching to delete mode!");
+				data[":operation"]="delete";
+			}
+			
 			$.ajax({
 				type: "POST",
 				url: item.id,
-				data: { value: item.innerText }
+				data: data,
 			}).done(function(){
 				 console.log("successfull save!");
 				 LatchD.wordchecker.checkPara(item);
@@ -127,13 +136,20 @@ LatchD.editmode = function(){
 		});
 	};
 	
-	var newParagraph = function(stringPath){
+	var newParagraph = function(stringPath,section){
 		var ele = document.createElement("p");
-		ele.innerText = "";
+		ele.innerText = "New paragraph!";
 		ele.setAttribute("id",stringPath+"/");
 		ele.setAttribute("contenteditable",true);
 		ele.setAttribute("onblur","LatchD.editmode.saveNewParagraph(this);");
-		$(ele).insertBefore("#byline");
+		
+		if(section){
+			$(ele).insertBefore(section);
+		}else{
+			$(ele).insertBefore("#byline");
+		}
+		
+		
 		LatchD.style.refreshTypography();
 		$(ele).focus();
 		ele.scrollIntoView();
@@ -218,9 +234,14 @@ LatchD.editmode = function(){
 		ele.scrollIntoView();
 	}
 	
-	var setValue = function(path,name,value){
+	var setValue = function(path,name,value,isDelete){
 		var data = {};
-		data[name] = value;
+	
+		if(isDelete){
+			data[":operation"]="delete";
+		}else{
+			data[name] = value;
+		}
 		
 		$.ajax({
 			type: "POST",
@@ -295,13 +316,19 @@ LatchD.editmode = function(){
 		$("pre[id='"+id+"'] code").text(code);
 		$("pre").show();
 		$(item).remove();
-		setValue(id,'value',code);
 		
-		if(code.substring(0,6) === "sling:"){
-			setValue(id,'file',code.substring(6));
-			window.location.reload();
+		if(code){
+			setValue(id,'value',code);
+			if(code.substring(0,6) === "sling:"){
+				setValue(id,'file',code.substring(6));
+				window.location.reload();
+			}else{
+				setValue(id,'file','');
+			}
 		}else{
-			setValue(id,'file','');
+			console.log("snippet was blank, switching to delete mode!");
+			setValue(id,'','',true);
+			window.location.reload();
 		}
 		
 		Prism.highlightAll();

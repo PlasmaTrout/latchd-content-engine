@@ -8,12 +8,15 @@
 %>
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
 <c:set var="name" value="<%= currentNode.getName() %>"/>
+<sling:include path='<%= path %>'/>
 <div rel="image" class="captiondiv">
-	<a href="#/images/${name}" data-toggle="modal" data-target="#modalview">
+	<a href="#" data-toggle="modal" data-target="#modalview">
 		<img src='<%= map.get("value") %>'
 			 alt='<%= map.get("caption","") %>'
 			 id="${path}"
-			 class="img-responsive"/>
+			 class="img-responsive"
+			 data-toggle="modal"
+			 data-target="#<%= currentNode.getName() %>"/>
 	</a>
 	<span contenteditable=true
 		 onblur="return LatchD.editmode.save('${path}','caption',this.innerText);"><%= map.get("caption","") %></span>
