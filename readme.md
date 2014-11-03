@@ -1,13 +1,12 @@
 e![StorieD_tree_1dy](https://badge.waffle.io/PlasmaTrout/latchd-content-engine.png?label=ready&title=Ready)](https://waffle.io/PlasmaTrout/latchd-content-engine)
 # LatchD Documentation Engine
-This document engine is a work in progress that's not quite ready for primetime. The goal is to have a place
-to edit documentation and tutorials effectively without the hassle of most blog engines. 
+This document engine is a work in progress that's not quite ready for primetime. The goal is make a documentation system that helps me write better and more uniformly. The editor restricts massive creativity in order to provide better looks and tooling. 
  
 ![Screenshot 1 - Current State](screen1.png)
  
  Is displayed as:
  
-![Screenshot 3 - Current State](screen3.png)
+![Screenshot 2 - Current State](screen3.png)
 
 To normal readers or visitors.
 
@@ -29,13 +28,14 @@ mvn -PautoInstallBundle install
 
 To install the project. Once installed you should be able to see the following pages:
 
+* http://localhost:8080/content/landing.html
 * http://localhost:8080/content/docs/2014/9/sample_post_for_latchd_system.html
-* http://localhost:8080/content/docs/2014/9/sample_post_with_image.html
+* http://localhost:8080/content/tutorials/osgi/apache_felix_first_steps.html
 
 If you change the selectors to edit.html you can access the editable content:
 
 * http://localhost:8080/content/docs/2014/9/sample_post_for_latchd_system.edit.html
-* http://localhost:8080/content/docs/2014/9/sample_post_with_image.edit.html
+* http://localhost:8080/content/tutorials/osgi/apache_felix_first_steps.edit.html
 
 Clicking on each paragraph of text or control is used to present its editable dialog, however 
 most content is content editable.
