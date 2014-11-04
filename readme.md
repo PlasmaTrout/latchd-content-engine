@@ -6,7 +6,7 @@ This document engine is a work in progress that's not quite ready for primetime.
  
  Is displayed as:
  
-![Screenshot 2 - Current State](screen3.png)
+![Screenshot 2 - Current State](screen2.png)
 
 To normal readers or visitors.
 
