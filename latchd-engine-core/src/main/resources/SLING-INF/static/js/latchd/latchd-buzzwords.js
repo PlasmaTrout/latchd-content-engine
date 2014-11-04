@@ -103,6 +103,7 @@ LatchD.wordchecker = function(){
 	};
 	
 	var checkPara = function(para){
+		
 		checkWordLists(para);
 		trickCheck(para);
 		$("font").tooltip()

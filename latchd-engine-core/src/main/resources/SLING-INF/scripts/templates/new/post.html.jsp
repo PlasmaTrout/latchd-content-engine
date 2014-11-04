@@ -23,7 +23,7 @@
 			<input type="hidden" name="jcr:title" value="new post" id="title">
 			<input type="hidden" name="sling:resourceType" value="latchd/templates/blog">
 		</form>
-		<button type="submit" class="btn btn-default" onclick="return LatchD.newPost();">Create</button>
+		<button type="submit" class="btn btn-default" onclick="return LatchD.editmode.newPost();">Create</button>
 	</div>
 </div>
 <sling:include path="/content/templates/footer.edit.html"/>

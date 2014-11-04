@@ -3,5 +3,22 @@
     <script src="/static/js/latchd/latchd-buzzwords.js"></script>
 	<script src="/static/js/prism.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/libs/toastr.js"></script>
+	<script>
+	toastr.options = {
+			  "closeButton": false,
+			  "debug": false,
+			  "positionClass": "toast-top-right",
+			  "onclick": null,
+			  "showDuration": "1000",
+			  "hideDuration": "1000",
+			  "timeOut": "3000",
+			  "extendedTimeOut": "1000",
+			  "showEasing": "swing",
+			  "hideEasing": "linear",
+			  "showMethod": "fadeIn",
+			  "hideMethod": "fadeOut"
+			};
+	</script>
 </body>
 </html>

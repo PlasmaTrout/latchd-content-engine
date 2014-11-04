@@ -6,16 +6,7 @@
 		<div class="col-md-12">
 			<div class="btn-toolbar" role="toolbar" style="margin-left: -20px;">
 				<div class="btn-group">
-					<button class="btn button-default" title="Adds a new paragraph"
-					data-toggle="tooltip" data-placement="bottom"
-					onclick="LatchD.editmode.newParagraph('${currentNode.path}');">
-						<span class="glyphicon glyphicon-pencil"></span>
-					</button>
-                    <button class="btn button-default" title="Adds a new code snippet"
-                        data-toggle="tooltip" data-placement="bottom"
-                        onclick="LatchD.editmode.newSnippet('${currentNode.path}');">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </button>
+					
 					<button class="btn button-default" title="Adds a new step"
 						data-toggle="tooltip" data-placement="bottom"
 						onclick="LatchD.editmode.newHeader('${currentNode.path}');">
@@ -26,11 +17,7 @@
 						onclick="LatchD.editmode.newQuote('${currentNode.path}');">
 						<span class="glyphicon glyphicon-comment"></span>
 					</button>
-					<button class="btn button-default" title="Adds an images from uploads directory"
-						data-toggle="tooltip" data-placement="bottom"
-						onclick="LatchD.editmode.newImage('${currentNode.path}');">
-						<span class="glyphicon glyphicon-picture"></span>
-					</button>
+					
 					<button class="btn button-default" title="Dropcap this document"
 						data-toggle="tooltip" data-placement="bottom"
 						onclick="LatchD.style.dropcap();">
@@ -92,7 +79,7 @@
 				sling.include(node.getPath()+".edit.html");
 			}
 		%>
-		<p id="byline">October 10, 2014 - <%= currentNode.author %></p>
+		<p rel="byline">October 10, 2014 - <%= currentNode.author %></p>
 		<p>Edit Mode</p>
 	</div>
 	<div class="col-md-4" id="alerts-div">

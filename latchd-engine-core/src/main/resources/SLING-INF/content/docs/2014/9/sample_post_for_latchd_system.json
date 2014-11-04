@@ -10,7 +10,7 @@
     "justify": true,
     "indent": "0",
     "step1": {
-        "sling:resourceType": "latchd/templates/heading",
+        "sling:resourceType": "latchd/templates/section",
         "jcr:primaryType": "nt:unstructured",
         "para1": {
             "value": "This post was created to show off some of the editing features available in the engine. If you noticed, all you can really do to the main document is add effects. Once a section has been added other things can be added to the level. This text you reading right now is inside a section, however it simple had no heading entered above it. If you click in the area on the top of this paragraph (just above the line) you will see the place were one can be added. Sections are required for text because they help form the table of contents later.",
@@ -20,10 +20,10 @@
     },
     "6_1414767906371": {
         "value": "Sections With Headings",
-        "sling:resourceType": "latchd/templates/heading",
+        "sling:resourceType": "latchd/templates/section",
         "jcr:primaryType": "nt:unstructured",
         "7_1414767916692": {
-            "value": "Here is an example of a section with a heading. Notice where this heading is located above the line. By clicking in this area you can change the heading or remove it completely. When you do, your final document will adjust to the lack of heading and assume it was just a new blank section of your document.",
+            "value": "Here is an example of a section with a section. Notice where this section is located above the line. By clicking in this area you can change the section or remove it completely. When you do, your final document will adjust to the lack of section and assume it was just a new blank section of your document.",
             "sling:resourceType": "latchd/templates/paragraph",
             "jcr:primaryType": "nt:unstructured"
         },
@@ -46,7 +46,7 @@
     },
     "11_1414772473335": {
         "value": "Code Snippets",
-        "sling:resourceType": "latchd/templates/heading",
+        "sling:resourceType": "latchd/templates/section",
         "jcr:primaryType": "nt:unstructured",
         "12_1414772528992": {
             "value": "You can also add code snippets to a section. When you add a code snippet you can either use the edit box to paste your snippet, or upload a code file to sling and point the box to it by using a special syntax.",

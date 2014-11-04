@@ -5,7 +5,7 @@
 		<div class="btn-group">
 			<button class="btn button-default" title="Adds a new paragraph"
 			data-toggle="tooltip" data-placement="bottom"
-			onclick="LatchD.editmode.newParagraph('${currentNode.path}');">
+			onclick="LatchD.editmode.newParagraph('${currentNode.path}','${currentNode.name}');">
 				<span class="glyphicon glyphicon-pencil"></span>
 			</button>
 			<button class="btn button-default" title="Adds a new code snippet"
@@ -27,7 +27,7 @@
         ${currentNode.value}
     <% } %>
 </h${level}>
-<hr/>
+<div id="${currentNode.name}-content" style="border-top: 1px solid #cecece;">
 <%
 		var headerNodes = currentNode.nodes;
 		while(headerNodes.hasNext()){
@@ -35,4 +35,4 @@
 			sling.include(node.getPath()+".edit.html");
 		}
 %>
-<hr/>
+</div>

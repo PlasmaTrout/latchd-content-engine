@@ -40,14 +40,17 @@ LatchD.editmode = function(){
 		if(localStorage.getItem(item.id) === item.innerText){
 			console.log("No changes noticed!");
 		}else{
+			
 			var data = { value: item.innerText };
-			console.log(item.id+" was changed, we need to save it!");
+			
 			
 			// If we have a blank paragraph delete it, this is the primary way
 			// to remove content
 			if(!item.innerText){
-				console.log("blank paragraph found switching to delete mode!");
+				toastr.info("Blank paragraphs are being deleted","Deleting");
 				data[":operation"]="delete";
+			}else{
+				toastr.info("Paragraph was changed","Saving");
 			}
 			
 			$.ajax({
@@ -55,10 +58,14 @@ LatchD.editmode = function(){
 				url: item.id,
 				data: data,
 			}).done(function(){
-				 console.log("successfull save!");
-				 LatchD.wordchecker.checkPara(item);
+				 //LatchD.wordchecker.checkPara(item);
+				
+				 if(!item.innerText){
+					 window.location.reload();
+				 }
+				 
 			}).fail(function(error){
-				console.log("Error: "+error);
+				toastr.error(error,"Error");
 			});
 		}
 	};
@@ -82,21 +89,25 @@ LatchD.editmode = function(){
 			console.log(result);
 			window.location.href="/content/landing.html";
 		}).fail(function(error){
-			console.log(error);
+			toastr.error(error,"Error");
 		});
 	}
 	
 	var saveNewParagraph = function(item){
-		$.ajax({
-			type: "POST",
-			url: item.id,
-			data: { value: item.innerText, "sling:resourceType": "latchd/templates/paragraph" }
-		}).done(function(response,obj,a){ 
-			 console.log("new paragraph saved!");
-			 
-		}).fail(function(error){
-			console.log("Error: "+error);
-		});
+		if(item.innerText){
+			$.ajax({
+				type: "POST",
+				url: item.id,
+				data: { value: item.innerText, "sling:resourceType": "latchd/templates/paragraph" }
+			}).done(function(response,obj,a){ 
+				 console.log("new paragraph saved!");
+				 
+			}).fail(function(error){
+				toastr.error(error,"Error");
+			});
+		}else{
+			window.location.reload();
+		}
 	};
 	
 	var saveNewItem = function(item,resourceType){
@@ -105,9 +116,11 @@ LatchD.editmode = function(){
 			url: item.id,
 			data: { value: item.innerText, "sling:resourceType": resourceType }
 		}).done(function(response,obj,a){ 
+			 toastr.info("New "+resoureType,"Saving");
 			 console.log("new "+resourceType+" saved to "+item.id);
+			 window.location.reload();
 		}).fail(function(error){
-			console.log("Error: "+error);
+			toastr.error(error,"Error");
 		});
 	};
 
@@ -132,9 +145,21 @@ LatchD.editmode = function(){
 		}).done(function(){
 			 console.log("new quote saved!");
 		}).fail(function(error){
-			console.log("Error: "+error);
+			toastr.error(error,"Error");
 		});
 	};
+
+    var updateQuote = function(path,value,author){
+        if(value){
+            setValue(path,'value',value);
+        }else{
+            setValue(path,'','',true);
+        }
+
+        if(author){
+            setValue(path,'author',author);
+        }
+    };
 	
 	var newParagraph = function(stringPath,section){
 		var ele = document.createElement("p");
@@ -143,16 +168,11 @@ LatchD.editmode = function(){
 		ele.setAttribute("contenteditable",true);
 		ele.setAttribute("onblur","LatchD.editmode.saveNewParagraph(this);");
 		
-		if(section){
-			$(ele).insertBefore(section);
-		}else{
-			$(ele).insertBefore("#byline");
-		}
-		
+		$("#"+section+"-content").append(ele);
 		
 		LatchD.style.refreshTypography();
 		$(ele).focus();
-		ele.scrollIntoView();
+		ele.scrollIntoViewIfNeeded();
 	};
 	
 	var newSnippet = function(path){
@@ -170,7 +190,7 @@ LatchD.editmode = function(){
 			 console.log("new image saved!");
 			 window.location.reload();
 		}).fail(function(error){
-			console.log("Error: "+error);
+			toastr.error(error,"Error");
 		});
 	};
 	
@@ -179,11 +199,11 @@ LatchD.editmode = function(){
 		ele.innerText = "New Section";
 		ele.setAttribute("id",stringPath+"/");
 		ele.setAttribute("contenteditable",true);
-		ele.setAttribute("onblur","LatchD.editmode.saveNewItem(this,'latchd/templates/heading');");
-		$(ele).insertBefore("#byline");
+		ele.setAttribute("onblur","LatchD.editmode.saveNewItem(this,'latchd/templates/section');");
+		$(ele).insertBefore("p[rel=byline]");
 		LatchD.style.refreshTypography();
 		$(ele).focus();
-		ele.scrollIntoView();
+		ele.scrollIntoViewIfNeeded();
 	};
 	
 	var newImage = function(path){
@@ -201,7 +221,7 @@ LatchD.editmode = function(){
 				 console.log("new image saved!");
 				 window.location.reload();
 			}).fail(function(error){
-				console.log("Error: "+error);
+				toastr.error(error,"Error");
 			});
 	};
 
@@ -226,12 +246,12 @@ LatchD.editmode = function(){
 		ele.appendChild(p);
 		ele.appendChild(div);
 
-		$(ele).insertBefore("#byline");
+		$(ele).insertBefore("p[rel=byline]");
 
 		saveNewQuote(stringPath+"/",p.innerText,div.innerText);
 
 		$(ele).focus();
-		ele.scrollIntoView();
+		ele.scrollIntoViewIfNeeded();
 	}
 	
 	var setValue = function(path,name,value,isDelete){
@@ -248,10 +268,18 @@ LatchD.editmode = function(){
 			url: path,
 			data: data
 		}).done(function(){
-			 console.log(name+" : "+value+" saved to "+path);
-			 $("img[id='"+path+"']").attr("src",value);
+			 
+			 if(isDelete){
+				 console.log(path+" was deleted!");
+				 toastr.info("Object was deleted","Deleted");
+				 window.location.reload();
+			 }else{
+				 toastr.info("Object changed to "+value,"Saved");
+				 console.log(name+" : "+value+" saved to "+path);
+				 $("img[id='"+path+"']").attr("src",value);
+			 }
 		}).fail(function(error){
-			console.log("Error: "+error);
+			toastr.error(error,"Error");
 		});
 	};
 	
@@ -284,7 +312,7 @@ LatchD.editmode = function(){
 			 window.location.href = item.path+".edit.html";
 			 
 		}).fail(function(error){
-			console.log("Error: "+error);
+			toastr.error(error,"Error");
 		});
 	}
 	
@@ -346,6 +374,7 @@ LatchD.editmode = function(){
 		saveNewItem: saveNewItem,
 		newImage: newImage,
 		newSnippet: newSnippet,
+        updateQuote: updateQuote,
 		save: setValue,
 		editCode: preToTextArea,
 		exitCode: exitCodeEdit,
