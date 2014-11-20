@@ -129,6 +129,7 @@ h5[id=subheading]{
 .image{
     display: block;
     margin: auto;
+    margin-bottom: 10px;
 }
 
 .captiondiv {

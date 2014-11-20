@@ -6,10 +6,12 @@
 	ValueMap map = resource.adaptTo(ValueMap.class);
 %>
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
-<div rel="image" class="captiondiv">
-	<img src='<%= map.get("value") %>'
-		 class="img-responsive image"
-		 alt='<%= map.get("caption","") %>'
-		 id="${path}"/>
-	<span><%= map.get("caption","") %></span>
+<div class="imageregion">
+    <div rel="image" class="captiondiv">
+	    <img src='<%= map.get("value") %>'
+		     class="img-responsive image"
+		    alt='<%= map.get("caption","") %>'
+		    id="${path}"/>
+	    <span><%= map.get("caption","") %></span>
+    </div>
 </div>
