@@ -19,7 +19,7 @@
 	},
 	"step1": {
 		"jcr:primaryType": "nt:unstructured",
-		"sling:resourceType": "latchd/templates/heading",
+		"sling:resourceType": "latchd/templates/section",
 		"level": 2,
 		"value": "Getting Apache Felix",
 		"para11": {
@@ -41,7 +41,7 @@
 	},
 	"step2": {
 		"jcr:primaryType": "nt:unstructured",
-		"sling:resourceType": "latchd/templates/heading",
+		"sling:resourceType": "latchd/templates/section",
 		"level": 2,
 		"value": "Installing Apache Felix",
 		"para21": {

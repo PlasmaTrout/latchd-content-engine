@@ -20,3 +20,5 @@ EXPOSE 30303
 
 # Run command
 CMD cd /opt/apache-sling && java -Xmx384M -agentlib:jdwp=transport=dt_socket,address=30303,server=y,suspend=n -jar org.apache.sling.launchpad-7-standalone.jar
+
+
