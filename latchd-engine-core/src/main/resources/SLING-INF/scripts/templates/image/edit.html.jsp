@@ -9,16 +9,19 @@
 <c:set var="path" value="<%= currentNode.getPath() %>"/>
 <c:set var="name" value="<%= currentNode.getName() %>"/>
 <sling:include path='<%= path %>'/>
+
+<div class="imageregion">
 <div rel="image" class="captiondiv">
 	<a href="#" data-toggle="modal" data-target="#modalview">
 		<img src='<%= map.get("value") %>'
 			 alt='<%= map.get("caption","") %>'
 			 id="${path}"
-			 class="img-responsive"
+			 class="img-responsive image"
 			 data-toggle="modal"
 			 data-target="#<%= currentNode.getName() %>"
              onclick='ko.applyBindings(LatchD.imagemodel);'/>
 	</a>
 	<span contenteditable=true
 		 onblur="return LatchD.editmode.save('${path}','caption',this.innerText);"><%= map.get("caption","") %></span>
+</div>
 </div>

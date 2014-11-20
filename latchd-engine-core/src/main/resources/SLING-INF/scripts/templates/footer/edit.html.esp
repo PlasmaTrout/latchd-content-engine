@@ -21,5 +21,16 @@
 			  "hideMethod": "fadeOut"
 			};
 	</script>
+    <script>
+            $("img[class]").each(function(idx,item){
+                var width = item.width;
+                if(width < 550){
+                    var pdiv = $(item).parent().parent();
+                    if(pdiv){
+                        $(pdiv).attr("style","width: "+width+"px;");
+                    }
+                }
+            });
+    </script>
 </body>
 </html>

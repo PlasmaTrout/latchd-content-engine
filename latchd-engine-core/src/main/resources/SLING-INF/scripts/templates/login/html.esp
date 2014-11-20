@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="/static/js/libs/jquery-2.0.2.min.js"></script>
+		<script src="/static/js/libs/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+        <div class="container">
+            <form class="form-signin" role="form" method="POST" action="/j_security_check">
+                <h2 class="form-signin-heading">Please Sign In</h2>
+                <label for="username" class="sr-only">Username</label>
+                <input type="text" id="username" name="j_username" class="form-control" 
+                    placeholder="Username" required autofocus autocomplete="off">
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" id="password" name="j_password" class="form-control"
+                     placeholder="Password" required autocomplete="off">
+                <input type="hidden" name="resource" id="resource" value='<%= request.getParameter("from") %>'/>
+                <input type="hidden" name="_charset" id="_charset" value="UTF-8"/>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+            </form>
+        </div>
+    <script src="/static/js/latchd/latchd-style.js"></script>
+	<script src="/static/js/latchd/latchd-editmode.js"></script>
+	<script src="/static/js/prism.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/libs/toastr.js"></script>
+	<script>
+	toastr.options = {
+			  "closeButton": false,
+			  "debug": false,
+			  "positionClass": "toast-top-right",
+			  "onclick": null,
+			  "showDuration": "1000",
+			  "hideDuration": "1000",
+			  "timeOut": "3000",
+			  "extendedTimeOut": "1000",
+			  "showEasing": "swing",
+			  "hideEasing": "linear",
+			  "showMethod": "fadeIn",
+			  "hideMethod": "fadeOut"
+			};
+	</script>
+
+    </body>
+</html>
+

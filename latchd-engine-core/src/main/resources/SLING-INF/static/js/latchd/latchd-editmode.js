@@ -70,25 +70,27 @@ LatchD.editmode = function(){
 		}
 	};
 	
-	var login = function(){
+	var login = function(successPath){
 		var object = {
 			j_username: "",
 			j_password: "",
 			"_charset_": "UTF-8",
-			"resource": "/content/landing.html"
+			"resource": successPath
 		};
 		
 		object.j_username = $("#username")[0].value;
 		object.j_password = $("#password")[0].value;
-		
+	    console.log("logging in!");
+
 		$.ajax({
 			type: "POST",
 			url: "/j_security_check",
 			data: object,
 		}).done(function(result){
 			console.log(result);
-			window.location.href="/content/landing.html";
+			window.location.href=successPath;
 		}).fail(function(error){
+            console.log(error);
 			toastr.error(error,"Error");
 		});
 	}

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<%
+    if(request.getAttribute("org.osgi.service.http.authentication.type") == null){
+        response.sendRedirect("/content/login.html?from="+request.getPathInfo());
+    } 
+%>
+
 <html lang="en" ng-app="LatchDApp">
 	<head>
 		<!-- <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'> -->
@@ -63,7 +69,7 @@
 			</ul>
 			<% if(request.getAttribute("org.osgi.service.http.authentication.type") != null){ %>
 					
-				    <p class="navbar-text navbar-right">Signed in as <a href="/system/sling/logout" class="navbar-link"><%= request.getAttribute("org.osgi.service.http.authentication.remote.user") %></a></p>
+				    <p class="navbar-text navbar-right">Signed in as <a href="/system/sling/logout?resource=/content/landing.html" class="navbar-link"><%= request.getAttribute("org.osgi.service.http.authentication.remote.user") %></a></p>
 					<ul class="nav navbar-nav">
 						
 					</ul>
