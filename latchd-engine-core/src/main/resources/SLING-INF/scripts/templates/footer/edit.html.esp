@@ -4,6 +4,7 @@
 	<script src="/static/js/prism.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/static/js/libs/toastr.js"></script>
+    <script src="/static/js/latchd/image_model.js"></script>
 	<script>
 	toastr.options = {
 			  "closeButton": false,
