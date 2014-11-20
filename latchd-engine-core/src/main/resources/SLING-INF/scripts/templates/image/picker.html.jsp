@@ -18,7 +18,7 @@
 					<div style="float: left;">
 						<img data-bind="attr{ src: path, id: path }"
 							 style="height: 80px;"
-							 onclick="LatchD.editmode.save('${path}','value',this.id);"/>
+							 onclick="LatchD.editmode.save('${path}','value',this.id,false,true);"/>
 					</div>
 				</div>
 				<div style="clear: both"></div>

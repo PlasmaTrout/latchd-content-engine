@@ -254,7 +254,7 @@ LatchD.editmode = function(){
 		ele.scrollIntoViewIfNeeded();
 	}
 	
-	var setValue = function(path,name,value,isDelete){
+	var setValue = function(path,name,value,isDelete,isImage){
 		var data = {};
 	
 		if(isDelete){
@@ -276,7 +276,12 @@ LatchD.editmode = function(){
 			 }else{
 				 toastr.info("Object changed to "+value,"Saved");
 				 console.log(name+" : "+value+" saved to "+path);
-				 $("img[id='"+path+"']").attr("src",value);
+
+                 // If the update was an image, find the img block and change the src
+                 // so the user can see the change.
+                 if(isImage){
+				    $("img[id='"+path+"']").attr("src",value);
+                 }
 			 }
 		}).fail(function(error){
 			toastr.error(error,"Error");
