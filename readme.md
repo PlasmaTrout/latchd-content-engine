@@ -10,6 +10,10 @@ This document engine is a work in progress that's not quite ready for primetime.
 
 To normal readers or visitors.
 
+Most documentation is created outside of the actual web site using the creation engines command line tools. They are currently in active development and are targeting monodoc (mdoc) xml format imports first. Here is sample of the import at the current snapshot release.
+
+![Screenshot 3 - Import From mdoc](screen5.png)
+
 ## Mission
 The vision of LatchD has gone through several iterations over the last few years,
 but one thing remains a constant: Web typography is horrible. It's getting better,
