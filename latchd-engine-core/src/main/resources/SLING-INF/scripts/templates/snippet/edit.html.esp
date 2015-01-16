@@ -11,7 +11,7 @@ if(currentNode.file){ %>
 	onclick="return LatchD.editmode.editCode(this);">
 	<code><%= currentNode.value %></code>
 </pre>
-<label class="radio-inline">
+<!-- <label class="radio-inline">
   <input type="radio" name="${currentNode.name}-inlineRadioOptions" id="inlineRadio1" value="bash" checked> bash
 </label>
 <label class="radio-inline">
@@ -22,5 +22,5 @@ if(currentNode.file){ %>
 </label>
 <label class="radio-inline">
   <input type="radio" name="${currentNode.name}-inlineRadioOptions" id="inlineRadio3" value="javascript"> javascript
-</label>
+</label> -->
 <% } %>
