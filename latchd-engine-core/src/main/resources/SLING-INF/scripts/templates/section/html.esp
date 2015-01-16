@@ -1,15 +1,20 @@
 <%
-	var level = currentNode.level ? currentNode.level : 2;
+	var level = currentNode.level ? currentNode.level : 1;
+	var tag = "H"+level;
 %>
 
     <% if(currentNode.value) { %>
-        <h2>${currentNode.value}</h2>
+        <h${level}>${currentNode.value}</h${level}>
     <% } %>
 
 <%
-		var headerNodes = currentNode.nodes;
-		while(headerNodes.hasNext()){
-			var node = headerNodes.nextNode();
-			sling.include(node.getPath()+".html");
-		}
+		function recurseNodes(){
+			var headerNodes = currentNode.nodes;
+			while(headerNodes.hasNext()){
+				var node = headerNodes.nextNode();
+				sling.include(node.getPath()+".html");
+			}
+		};
+		
+		recurseNodes();
 %>

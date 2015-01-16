@@ -29,10 +29,14 @@
 </h${level}>
 <div id="${currentNode.name}-content" style="border-top: 1px solid #cecece;">
 <%
-		var headerNodes = currentNode.nodes;
-		while(headerNodes.hasNext()){
-			var node = headerNodes.nextNode();
-			sling.include(node.getPath()+".edit.html");
-		}
+		function recurseNodes(){
+			var headerNodes = currentNode.nodes;
+			while(headerNodes.hasNext()){
+				var node = headerNodes.nextNode();
+				sling.include(node.getPath()+".html");
+			}
+		};
+		
+		recurseNodes();
 %>
 </div>

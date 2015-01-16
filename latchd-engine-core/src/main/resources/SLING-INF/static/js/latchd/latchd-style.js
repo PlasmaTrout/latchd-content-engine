@@ -3,11 +3,9 @@ var LatchD = {};
 LatchD.style = function(){
 	
 	var styles = [];
-	styles.push({ main: "georgia", title: "header-verdana"});
-	styles.push({ main: "libre-baskerville", title: "header-source-sans"});
-	styles.push({ main: "garamond", title: "header-helvetica"});
-	styles.push({ main: "baskerville", title: "header-franklin"});
-	styles.push({ main: "garamond", title: "header-gills"});
+	styles.push({ main: "tk-minion-pro", title: "tk-open-sans"});
+	styles.push({ main: "tk-chaparral-pro", title: "tk-futura-pt"});
+	styles.push({ main: "tk-adobe-garamond-pro", title: "tk-eurpopa"});
 	
 	var currentStyle = 0;
     var currentIndent = 0;

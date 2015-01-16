@@ -132,6 +132,10 @@ h5[id=subheading]{
     margin-bottom: 10px;
 }
 
+p[id] {
+	font-size: 16pt;
+}
+
 .captiondiv {
 	padding: 5px;
 	background-color: #eeeeee;

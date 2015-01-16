@@ -21,10 +21,8 @@
 		<script src="/static/js/libs/jquery-2.0.2.min.js"></script>
         <script src="/static/js/libs/knockout-3.2.0.js"></script>
 		<script src="/system/sling.js"></script>		
-        <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700' rel='stylesheet' type='text/css'>
-
+		<script src="//use.typekit.net/xsh6yrr.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
 	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
