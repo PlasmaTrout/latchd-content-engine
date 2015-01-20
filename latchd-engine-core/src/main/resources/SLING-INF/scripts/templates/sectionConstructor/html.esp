@@ -1,11 +1,6 @@
-<%
-	var level = currentNode.level ? currentNode.level : 1;
-	var tag = "H"+level;
-%>
-
-    <% if(currentNode.value) { %>
-        <h${level} id="${currentNode.path}">${currentNode.value}</h${level}>
-    <% } %>
+<div class="page-header">
+	<h1 id="${currentNode.value}">${currentNode.value} <small></small></h1>
+</div>
 
 <%
 		function recurseNodes(){

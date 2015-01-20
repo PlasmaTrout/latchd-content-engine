@@ -13,8 +13,8 @@
 		};
 		
 		if(currentNode.hasNodes()){
-			%><ul><%
+			%><ol><%
 			recurseNodes();
-			%></ul><%
+			%></ol><%
 		}
 %>

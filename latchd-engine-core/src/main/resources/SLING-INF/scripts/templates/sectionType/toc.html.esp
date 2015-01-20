@@ -1,4 +1,5 @@
-<li><h3><a href="#${currentNode.value}">${currentNode.value}</a></h3></li>
+<li>
+<h3><a href="#${currentNode.value}">${currentNode.value} </a><span class="label label-default">${currentNode.kind}</span></h3></li>
 
 <%
 		function recurseNodes(){

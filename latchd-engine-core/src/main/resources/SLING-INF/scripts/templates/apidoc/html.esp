@@ -6,7 +6,9 @@
 		<div class="page-header">
 			<h1>Table Of Contents <small>${currentNode.headline}</small></h1>
 		</div>
+		<ol>
 		<%
+				
 				var it = currentNode.nodes;
 				while(it.hasNext()){
 					var node = it.nextNode();
@@ -16,12 +18,13 @@
 					}
 				}
 			%>
+		</ol>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-7 col-md-offset-2">
 			<div class="page-header">
-				<h1>Overview <small>${currentNode.headline}</small></h1>
+				<h1 id="overview">Overview <small>${currentNode.headline}</small></h1>
 			</div>
 			<%
 				var it = currentNode.nodes;
