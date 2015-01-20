@@ -1,0 +1,48 @@
+<% request.setAttribute("title",currentNode.headline); %>
+<% sling.include("/content/templates/header.html"); %>
+<div class="container">
+	<div class="row" id="tableofcontents">
+		<div class="col-md-7 col-md-offset-2">
+		<div class="page-header">
+			<h1>Table Of Contents <small>${currentNode.headline}</small></h1>
+		</div>
+		<%
+				var it = currentNode.nodes;
+				while(it.hasNext()){
+					var node = it.nextNode();
+					if(node["sling:resourceType"].indexOf("section") != -1){
+						var path = node.getPath()+".toc.html";
+						sling.include(path);
+					}
+				}
+			%>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7 col-md-offset-2">
+			<div class="page-header">
+				<h1>Overview <small>${currentNode.headline}</small></h1>
+			</div>
+			<%
+				var it = currentNode.nodes;
+				while(it.hasNext()){
+					var node = it.nextNode();
+					var path = node.getPath()+".html";
+					sling.include(path);
+				}
+			%>
+			<p>October 10, 2014 - ${currentNode.author}</p>
+		</div>
+	</div>
+</div>
+<% sling.include("/content/templates/footer.html"); %>
+<%
+	if(currentNode.dropcap){
+		%><script>LatchD.style.dropcap();</script><%
+	}
+%>
+<script>
+	LatchD.style.indent(<%= currentNode.indent %>);
+	LatchD.style.justify(<%= currentNode.justify %>);
+	LatchD.style.setTypography(<%= currentNode.typeset %>);
+</script>

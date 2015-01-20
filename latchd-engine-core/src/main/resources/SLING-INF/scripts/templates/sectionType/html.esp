@@ -1,0 +1,15 @@
+<div class="page-header">
+	<h1 id="${currentNode.value}">${currentNode.value} <small>Type</small></h1>
+</div>
+
+<%
+		function recurseNodes(){
+			var headerNodes = currentNode.nodes;
+			while(headerNodes.hasNext()){
+				var node = headerNodes.nextNode();
+				sling.include(node.getPath()+".html");
+			}
+		};
+		
+		recurseNodes();
+%>
