@@ -1,10 +1,10 @@
-	<script src="/static/js/latchd/latchd-style.js"></script>
-	<script src="/static/js/latchd/latchd-editmode.js"></script>
-    <script src="/static/js/latchd/latchd-buzzwords.js"></script>
-	<script src="/static/js/prism.js"></script>
-	<script src="/static/js/bootstrap.min.js"></script>
-	<script src="/static/js/libs/toastr.js"></script>
-    <script src="/static/js/latchd/image_model.js"></script>
+	<script src="${request.contextPath}/static/js/latchd/latchd-style.js"></script>
+	<script src="${request.contextPath}/static/js/latchd/latchd-editmode.js"></script>
+    <script src="${request.contextPath}/static/js/latchd/latchd-buzzwords.js"></script>
+	<script src="${request.contextPath}/static/js/prism.js"></script>
+	<script src="${request.contextPath}/static/js/bootstrap.min.js"></script>
+	<script src="${request.contextPath}/static/js/libs/toastr.js"></script>
+    <!-- <script src="${request.contextPath}/static/js/latchd/image_model.js"></script> -->
 	<script>
 	toastr.options = {
 			  "closeButton": false,
@@ -24,7 +24,7 @@
     <script>
             $("img[class]").each(function(idx,item){
                 var width = item.width;
-                if(width < 550){
+                if(width > 0 && width < 550){
                     var pdiv = $(item).parent().parent();
                     if(pdiv){
                         $(pdiv).attr("style","width: "+width+"px;");

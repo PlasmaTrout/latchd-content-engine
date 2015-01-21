@@ -81,5 +81,30 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>openShiftDeploy</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>maven-sling-plugin</artifactId>
+                        <version>2.0.4-incubator</version>
+                        <executions>
+                            <execution>
+                                <id>install-bundle</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                                <configuration>
+                                    <slingUrl>http://lde-latchd.rhcloud.com/sling/system/console</slingUrl>
+                                    <user>admin</user>
+                                    <password>admin</password>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>

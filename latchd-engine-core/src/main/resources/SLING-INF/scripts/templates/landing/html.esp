@@ -11,7 +11,7 @@
 					headline: node.getProperty("headline").getString(),
 					subheading: node.getProperty("subheading").getString(),
 					path: node.getPath()+".html",
-					image: "/static/img/LatchDHeader.png"
+					image: request.contextPath+"/static/img/LatchDHeader.png"
 				};
 				
 				articles.push(article);
@@ -50,7 +50,7 @@
 			<div class="panel-body">
 				<% for(a in articles){ %>
 					<div class="media">
-						<a class="pull-left" href="<%= articles[a].path %>">
+						<a class="pull-left" href="<%= request.contextPath + articles[a].path %>">
 							<img class="media-object" src="<%= articles[a].image %>" style="width: 64px;"/>
 						</a>
 						<div class="media-body">
@@ -77,9 +77,9 @@
                                 var tlist = tnode.nodes;
                                 while(tlist.hasNext()){  
                                     var tlnode = tlist.nextNode();
-                                    var newpath = tlnode.headline+".html";
+                                    var newpath = tlnode.path+".html";
                             %>
-                                    <h4 class="media-heading"><a href="${newpath}"><%= tlnode.headline %></a></h4>
+                                    <h4 class="media-heading"><a href="${request.contextPath}${newpath}"><%= tlnode.headline %></a></h4>
 
                             <% } %>
                         </div>

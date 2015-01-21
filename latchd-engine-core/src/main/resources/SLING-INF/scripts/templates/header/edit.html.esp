@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%
     if(request.getAttribute("org.osgi.service.http.authentication.type") == null){
-        response.sendRedirect("/content/login.html?from="+request.getPathInfo());
+        response.sendRedirect(request.contextPath+"/content/login.html?from="+request.getPathInfo());
     } 
 %>
 
@@ -14,15 +14,33 @@
 			currentNode.parent = request.getAttribute("parentpath");
 		%>
 		<title><%= bname+"-"+request.getAttribute("title") %></title>
-		<link rel="stylesheet" href="/static/css/prism.css"/>
-		<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="/static/css/style.css"/>
-		<link rel="stylesheet" href="/static/css/toastr.css"/>
-		<script src="/static/js/libs/jquery-2.0.2.min.js"></script>
-        <script src="/static/js/libs/knockout-3.2.0.js"></script>
-		<script src="/system/sling.js"></script>		
+		<link rel="stylesheet" href="${request.contextPath}/static/css/prism.css"/>
+		<link rel="stylesheet" href="${request.contextPath}/static/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="${request.contextPath}/static/css/style.css"/>
+		<link rel="stylesheet" href="${request.contextPath}/static/css/toastr.css"/>
+		<script src="${request.contextPath}/static/js/libs/jquery-2.0.2.min.js"></script>
+        <script src="${request.contextPath}/static/js/libs/knockout-3.2.0.js"></script>
+		<script src="${request.contextPath}/system/sling.js"></script>		
 		<script src="//use.typekit.net/xsh6yrr.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
+		<script>
+			function ImagesViewModel() {
+			    var self = this;
+			    self.imagelist = ko.observableArray([]);
+			                
+			    $.getJSON("${request.contextPath}/uploads/images.tidy.infinity.json").then(function(item){
+			        for(p in item){
+			            if(p.indexOf("jcr:") == -1){
+			                self.imagelist().push({
+			                    path: "${request.contextPath}/uploads/images/"+p
+			                });
+			            }
+			        }
+			    });
+			};
+	
+			var imagemodel = new ImagesViewModel();
+		</script>
 	</head>
 	<body>
 	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -35,7 +53,7 @@
 	        <span class="icon-bar"></span>
 		    </button>
 		    <a class="navbar-brand" href="#">
-		    	<img src="/static/img/LatchDHeader.png" style="height: 20px;" />
+		    	<img src="${request.contextPath}/static/img/LatchDHeader.png" style="height: 20px;" />
 		    </a>
 		</div>
 		<div class="collapse navbar-collapse" id="#mainnavbar">
@@ -44,8 +62,8 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Document<span class="caret"></a>
 		    		<ul class="dropdown-menu" role="menu">
-		    			<li><a href="/content/docs/new.post.html">Create A New Blog Post</a></li>
-		    			<li><a href="/content/docs/new.book.html">Create A New Book</a></li>
+		    			<li><a href="${request.contextPath}/content/docs/new.post.html">Create A New Blog Post</a></li>
+		    			<li><a href="${request.contextPath}/content/docs/new.book.html">Create A New Book</a></li>
 		    		</ul> 	
 		    	</li>
 		    	<li class="dropdown">
@@ -61,13 +79,13 @@
 		    	<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<span class="caret"></a>
 		    		<ul class="dropdown-menu" role="menu">
-		    			<li><a href="/content/media/photo.new.html">Upload A Photo</a></li>
+		    			<li><a href="${request.contextPath}/content/media/photo.new.html">Upload A Photo</a></li>
 		    		</ul> 	
 		    	</li>
 			</ul>
 			<% if(request.getAttribute("org.osgi.service.http.authentication.type") != null){ %>
 					
-				    <p class="navbar-text navbar-right">Signed in as <a href="/system/sling/logout?resource=/content/landing.html" class="navbar-link"><%= request.getAttribute("org.osgi.service.http.authentication.remote.user") %></a></p>
+				    <p class="navbar-text navbar-right">Signed in as <a href="${request.contextPath}/system/sling/logout?resource=${request.contextPath}/content/landing.html" class="navbar-link"><%= request.getAttribute("org.osgi.service.http.authentication.remote.user") %></a></p>
 					<ul class="nav navbar-nav">
 						
 					</ul>

@@ -1,7 +1,7 @@
 <%
 if(currentNode.file){ %>
 
-<pre data-src='${currentNode.file}' id="${currentNode.value}" onclick="return LatchD.editmode.editCode(this);"></pre>
+<pre data-src='${request.contextPath}${currentNode.file}' id="${currentNode.value}" onclick="return LatchD.editmode.editCode(this);"></pre>
 
 <%	} else { %>
 

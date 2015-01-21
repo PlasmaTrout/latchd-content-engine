@@ -5,7 +5,7 @@
 <%
 	ValueMap map = resource.adaptTo(ValueMap.class);
 %>
-<c:set var="path" value="<%= currentNode.getPath() %>"/>
+<c:set var="path" value="<%= request.getContextPath()+currentNode.getPath() %>"/>
 <div class="modal fade" id="<%= currentNode.getName() %>" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
 	<div class="modal-dialog">
 		<div class="modal-content">

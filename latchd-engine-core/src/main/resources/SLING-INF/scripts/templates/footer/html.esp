@@ -1,15 +1,15 @@
-	<script src="/static/js/latchd/latchd-style.js"></script>
-	<script src="/static/js/prism.js"></script>
+	<script src="${request.contextPath}/static/js/latchd/latchd-style.js"></script>
+	<script src="${request.contextPath}/static/js/prism.js"></script>
     <script>
-            $("img[class]").each(function(idx,item){
-                var width = item.width;
-                if(width < 550){
-                    var pdiv = $(item).parent();
-                    if(pdiv){
-                        $(pdiv).attr("style","width: "+width+"px;");
-                    }
-                }
-            });
+	    $("img[class]").each(function(idx,item){
+	        var width = item.width;
+	        if(width > 0 && width < 550){
+	            var pdiv = $(item).parent().parent();
+	            if(pdiv){
+	                $(pdiv).attr("style","width: "+width+"px;");
+	            }
+	        }
+	    });
     </script>
 
 </body>

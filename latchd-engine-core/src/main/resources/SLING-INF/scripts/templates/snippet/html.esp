@@ -1,7 +1,7 @@
 <%
 if(currentNode.file){ %>
 
-<pre data-src='${currentNode.file}'></pre>
+<pre data-src='${request.contextPath}${currentNode.file}'></pre>
 
 <%	} else { %>
 

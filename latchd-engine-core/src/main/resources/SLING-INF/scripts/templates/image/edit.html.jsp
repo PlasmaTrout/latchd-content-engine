@@ -19,7 +19,7 @@
 			    class="img-responsive image"
 			    data-toggle="modal"
 			    data-target="#<%= currentNode.getName() %>"
-                onclick='ko.applyBindings(LatchD.imagemodel);'/>
+                onclick='ko.applyBindings(imagemodel);'/>
 	    </a>
 	    <span contenteditable=true
 		     onblur="return LatchD.editmode.save('${path}','caption',this.innerText);"><%= map.get("caption","") %></span>
