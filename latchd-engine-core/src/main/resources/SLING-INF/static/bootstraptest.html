@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bootstrap Formatting Test (Class)</title>
+<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/static/css/style.css" />
+<link rel="stylesheet" href="/static/css/prism.css" />
+<script src="/static/js/libs/jquery-2.0.2.min.js"></script>
+<script src="/static/js/libs/modernizr-2.6.2.min.js"></script>
+<script src="/system/sling.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,700'
+	rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700'
+	rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-2 col-md-offset-1">
+			<div class="panel panel-default" style="margin-top: 40px;">
+				<div class="panel-heading">
+					<h3 class="panel-title">LDocument</h3>
+				</div>
+				<div class="panel-body" style="padding: 0px;">
+					<ul class="list-group" style="margin: 0px;">
+						<li class="list-group-item">Author</li>
+						<li class="list-group-item">Copyright</li>
+						<li class="list-group-item">CreatedDate</li>
+						<li class="list-group-item">Sections</li>
+						<li class="list-group-item">Subheading</li>
+						<li class="list-group-item">Summary</li>
+						<li class="list-group-item">Title</li>
+					</ul>
+					<ul class="list-group" style="margin: 0px;">
+						<li class="list-group-item list-group-item-info">+GetSlingValues</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div class="page-header">
+				<h1 id="overview">
+					LDocument <small>Class</small>
+				</h1>
+			</div>
+			<pre class="language-csharp" id="/content/docs/a">
+				<code class=" language-csharp" data-language="C#">public class LDocument : LatchD.Parser.API.ISlingImportable</code>
+			</pre>
+			<p id="/content/a" rel="contentblock" class="georgia"text-index: 0px;">Lorem
+				ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum nisl
+				metus, nec aliquam elit facilisis eget. Nunc magna lectus, consequat
+				porttitor consectetur facilisis, pharetra ac odio. Praesent est
+				neque, rutrum nec viverra sed, rutrum a ex. Pellentesque habitant
+				morbi tristique senectus et netus et malesuada fames ac turpis
+				egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Nulla at lorem nunc. Nullam tristique mi eget vestibulum porttitor.
+				Maecenas rutrum vehicula nisi</p>
+
+			<p id="/content/b" rel="contentblock" class="georgia"text-index: 0px;>Suspendisse
+				et blandit sapien. Phasellus vitae tempus leo, ut euismod justo.
+				Curabitur quis rutrum odio. Maecenas consequat justo vel sem
+				facilisis lobortis. Aenean lobortis arcu ac nulla aliquet eleifend.
+				Mauris mollis venenatis egestas. Quisque dapibus iaculis odio,
+				faucibus imperdiet magna vestibulum ac. Curabitur gravida dolor sed
+				bibendum egestas. Duis vitae diam faucibus nibh semper maximus.
+				Proin sed ultrices velit. Lorem ipsum dolor sit amet, consectetur
+				adipiscing elit. Proin blandit vehicula convallis. Etiam vitae nibh
+				at orci congue tempor ut non est. Pellentesque habitant morbi
+				tristique senectus et netus et malesuada fames ac turpis egestas.
+				Phasellus non turpis arcu. Vivamus non dolor vel diam mollis
+				ultrices vitae ac purus.</p>
+			<p>October 10, 2014 - S.Bullock</p>
+		</div>
+	</div>
+	</div>
+	<script src="/static/js/latchd/latchd-style.js"></script>
+	<script src="/static/js/prism.js"></script>
+	<script>
+		$("img[class]").each(function(idx, item) {
+			var width = item.width;
+			if (width > 0 && width < 550) {
+				var pdiv = $(item).parent().parent();
+				if (pdiv) {
+					$(pdiv).attr("style", "width: " + width + "px;");
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

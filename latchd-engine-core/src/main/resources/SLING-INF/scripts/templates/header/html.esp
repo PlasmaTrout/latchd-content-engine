@@ -5,7 +5,7 @@
 			var n = currentNode.getSession().getNode("/content/landing");
 			var bname = n.getProperty("sitename");
 		%>
-		<title><%= bname+"-"+request.getAttribute("title") %></title>
+		<title><%= bname+" - "+request.getAttribute("title") %></title>
 		<link rel="stylesheet" href="${request.contextPath}/static/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="${request.contextPath}/static/css/style.css"/>
 		<link rel="stylesheet" href="${request.contextPath}/static/css/prism.css"/>

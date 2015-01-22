@@ -1,5 +1,5 @@
 <li>
-<h3><a href="#${currentNode.value}">${currentNode.value} </a><span class="label label-default">${currentNode.kind}</span></h3></li>
+<h4><a href="${request.contextPath}${currentNode.path}.single.html">${currentNode.value} </a><small><span class="label label-default">${currentNode.kind}</span></small></h4></li>
 
 <%
 		function recurseNodes(){
@@ -15,7 +15,7 @@
 		
 		if(currentNode.hasNodes()){
 			%><ul><%
-			recurseNodes();
+			//recurseNodes();
 			%></ul><%
 		}
 %>

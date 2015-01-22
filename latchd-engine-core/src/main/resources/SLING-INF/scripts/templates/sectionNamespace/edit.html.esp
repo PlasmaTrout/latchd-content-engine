@@ -9,7 +9,7 @@
 				var node = headerNodes.nextNode();
 				sling.include(node.getPath()+".edit.html");
 			}
-		};
+		};z
 		
 		recurseNodes();
 %>

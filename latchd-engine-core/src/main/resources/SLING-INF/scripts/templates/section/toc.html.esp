@@ -1,5 +1,5 @@
 
-<li><a href="#${currentNode.path}"><h4>${currentNode.value}</h4></a></li>
+<li><a href="${currentNode.path}"><h4>${currentNode.value}</h4></a></li>
 
 <%
 		function recurseNodes(){

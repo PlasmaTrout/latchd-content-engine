@@ -1,4 +1,4 @@
-<li><h2><a href="#${currentNode.value}">${currentNode.value}</a></h2></li>
+<li><h4><a href="${request.contextPath}${currentNode.path}.single.html">${currentNode.value}</a></h4></li>
 
 <%
 		function recurseNodes(){

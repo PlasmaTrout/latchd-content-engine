@@ -1,6 +1,6 @@
 {
 	"jcr:primaryType": "nt:unstructured",
 	"sling:resourceType": "latchd/templates/landing",
-	"sitename": "CodeAffectionado",
+	"sitename": "LatchD Documentation Engine",
 	"tagline": "Shared learning for code enthusiasts"	
 }
