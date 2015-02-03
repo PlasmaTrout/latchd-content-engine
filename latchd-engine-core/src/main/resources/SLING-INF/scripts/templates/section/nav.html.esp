@@ -1,0 +1,21 @@
+
+<li><a href="#${currentNode.path}">${currentNode.value}</a></li>
+
+<%
+		function recurseNodes(){
+			var headerNodes = currentNode.nodes;
+			while(headerNodes.hasNext()){
+				var node = headerNodes.nextNode();
+				if(node["sling:resourceType"].indexOf("section") != -1){
+					var path = node.getPath()+".toc.html";
+					sling.include(path);
+				}
+			}
+		};
+		
+		if(currentNode.hasNodes()){
+			%><ol><%
+			recurseNodes();
+			%></ol><%
+		}
+%>

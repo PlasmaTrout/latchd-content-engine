@@ -3,13 +3,29 @@
 <% sling.include("/content/templates/header.html"); %>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-1">
-			&nbsp;
-		</div>
-		<div class="col-md-2" id="toolbelt">
-			&nbsp;
+		<div class="col-md-3" id="toolbelt">
+			<div id="tutorialnavigation" class="panel panel-default">
+				<div class="panel-heading">Tutorial Sections</div>
+				<div class="panel-body">
+					<ol>
+						<%
+						
+						var it = currentNode.nodes;
+						while(it.hasNext()){
+							var node = it.nextNode();
+							if(node["sling:resourceType"].indexOf("section") != -1){
+								var path = node.getPath()+".nav.html";
+								sling.include(path);
+							}
+						}
+						
+						%>
+				</div>
+					</ol>
+			</div>
 		</div>
 		<div class="col-md-5">
+			<article>
 			<h1 contenteditable=true
 			class="header-verdana"
 			id="headline"
@@ -22,6 +38,7 @@
 					sling.include(includePath);
 				}
 			%>
+			</article>
 			<p id="byline">October 10, 2014 - <%= currentNode.author %></p>
 			<p>Edit Mode</p>
 		</div>
